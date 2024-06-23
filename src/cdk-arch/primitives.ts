@@ -74,7 +74,7 @@ export interface DrawnObjectProps extends ExcaliDrawPrimitiveProps {
 
   readonly strokeWidth?: number;
   readonly strokeStyle?: StrokeStyle;
-  readonly strokeColor: string;
+  readonly strokeColor?: string;
   readonly fillStyle?: FillStyle;
   readonly roughness?: number;
   readonly opacity?: number;
@@ -85,7 +85,6 @@ export interface DrawnObjectProps extends ExcaliDrawPrimitiveProps {
   readonly lastCommittedPoint?: null;
   readonly startArrowhead?: null;
   readonly endArrowhead?: null;
-  readonly points: number[][];
 
 }
 
@@ -104,13 +103,11 @@ export abstract class DrawnObject extends ExcaliDrawPrimitive {
   lastCommittedPoint: null = null;
   startArrowhead: null = null;
   endArrowhead: null = null;
-  points: number[][] = [];
 
-  constructor(args: LineProps) {
+  constructor(args: DrawnObjectProps) {
 
     super(args);
     this.strokeColor = args.strokeColor || this.strokeColor;
-    this.points = args.points || this.points;
     this.fillStyle = args.fillStyle || this.fillStyle;
     this.strokeWidth = args.strokeWidth || this.strokeWidth;
     this.strokeStyle = args.strokeStyle || this.strokeStyle;

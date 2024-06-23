@@ -18,7 +18,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     module: 'cdk_arch',
   },
   description: 'L3-level cdk constructs for DMS',
-  devDeps: ['eslint-plugin-cdk', 'cdk-nag'],
+  devDeps: ['eslint-plugin-cdk', 'cdk-nag', 'tmp-promise'],
   peerDeps: [],
   bundledDeps: ['uuidv4'],
   packageName: 'cdk-arch',
