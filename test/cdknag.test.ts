@@ -48,8 +48,8 @@ describe('Nag Errors', () => {
         reason: 'S3 bucket is used for testing purposes',
       },
       {
-        id: 'AwsSolutions-IAM5',
-        reason: 'TODO: fix this.',
+        id: 'AwsSolutions-IAM4',
+        reason: 'IAM policy is used for testing purposes',
       },
     ]);
 

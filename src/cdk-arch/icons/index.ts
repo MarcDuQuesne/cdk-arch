@@ -21,3 +21,5 @@ export function read(filePath: string): primitives.ExcaliDrawPrimitive[] {
 
   return elements;
 }
+
+export const lambda = read('lambda.json');
