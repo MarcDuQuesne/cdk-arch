@@ -23,6 +23,11 @@ export interface ExcaliDrawPrimitiveProps {
   readonly groupIds?: string[];
 }
 
+export interface boundElement {
+  id: string;
+  type: string;
+}
+
 export abstract class ExcaliDrawPrimitive {
 
   type: string = 'null';
@@ -35,7 +40,7 @@ export abstract class ExcaliDrawPrimitive {
   isDeleted: boolean = false;
   frameId: number = 0;
   angle: number = 0;
-  boundElements: string[] = [];
+  boundElements: boundElement[] = [];
   updated: boolean = true;
   link: string = '';
   locked: boolean = false;
@@ -51,6 +56,15 @@ export abstract class ExcaliDrawPrimitive {
     this.height = args?.height || this.height;
     this.groupIds = args?.groupIds || this.groupIds;
   };
+
+  public addBoundElement(element: ExcaliDrawPrimitive): void {
+    this.boundElements.push(
+      {
+        id: element.id,
+        type: element.type,
+      },
+    );
+  }
 }
 
 export interface Roundness {
@@ -63,11 +77,23 @@ export enum StrokeStyle {
   Dotted = 'dotted'
 }
 
+export enum ArrowHead {
+  Triangle = 'triangle',
+  Arrow = 'arrow'
+}
+
+
 export enum FillStyle {
   Hachure = 'hachure',
   Solid = 'solid',
   CrossHatch = 'cross-hatch',
   Dots = 'dots'
+}
+
+export interface Binding {
+  elementId: string;
+  focus: number;
+  gap: number;
 }
 
 export interface DrawnObjectProps extends ExcaliDrawPrimitiveProps {
@@ -127,14 +153,14 @@ export interface LineProps extends DrawnObjectProps {
 
   readonly roughness?: number;
   readonly opacity?: number;
-  readonly strokeColor: string;
+  readonly strokeColor?: string;
   readonly backgroundColor?: string;
-  readonly startBinding?: null;
-  readonly endBinding?: null;
+  readonly startBinding?: any;
+  readonly endBinding?: any;
   readonly lastCommittedPoint?: null;
   readonly startArrowhead?: null;
-  readonly endArrowhead?: null;
-  readonly points: number[][];
+  readonly endArrowhead?: any;
+  readonly points?: number[][];
 
 }
 
@@ -175,6 +201,40 @@ export class Rectangle extends DrawnObject {
   }
 }
 
+export interface EllipseProps extends DrawnObjectProps { }
+
+export class Ellipse extends DrawnObject {
+
+  constructor(args: RectangleProps) {
+    super({
+      type: PrimitiveType.Ellipse,
+      ...args,
+    });
+  }
+}
+
+export interface ArrowProps extends LineProps { }
+
+export class Arrow extends Line {
+
+  static connector(startId: string, endId: string) {
+    return new Arrow({
+      startBinding: { elementId: startId, focus: 0, gap: 20 },
+      endBinding: { elementId: endId, focus: 0, gap: 40 },
+    });
+  }
+
+  constructor(args: LineProps) {
+    super({
+      type: PrimitiveType.Arrow,
+      endArrowhead: ArrowHead.Triangle,
+      ...args,
+    });
+
+  }
+}
+
+
 export interface TextProps extends DrawnObjectProps {
   fontFamily?: number;
   textAlign?: string;
@@ -184,7 +244,6 @@ export interface TextProps extends DrawnObjectProps {
   lineHeight?: number;
   baseline?: number;
 }
-
 
 export class Text extends ExcaliDrawPrimitive {
 

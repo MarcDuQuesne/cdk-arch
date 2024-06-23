@@ -3,7 +3,7 @@ import * as primitives from './primitives';
 
 export interface AppState {
   readonly viewBackgroundColor: string;
-  readonly gridSize: any; 
+  readonly gridSize: any;
 }
 
 export interface Data {
@@ -17,14 +17,14 @@ export interface Data {
 export class SketchBuilder {
 
   data: Data;
-  drawObjs: any[];
+  drawObjs: primitives.ExcaliDrawPrimitive[];
   groups: any[];
 
   constructor() {
     this.data = {
       type: 'excalidraw',
       version: 1,
-      source: 'procXD',
+      source: 'CDK Arch Sketch Builder',
       elements: [],
       appState: {
         viewBackgroundColor: '#ffffff',
@@ -38,6 +38,19 @@ export class SketchBuilder {
   addElement(element: primitives.ExcaliDrawPrimitive): string {
     this.drawObjs.push(element);
     return element.id;
+  }
+
+  addArrow(startId: string, endId: string): string {
+    const arrow = primitives.Arrow.connector(startId, endId);
+    this.drawObjs.push(arrow);
+
+    for (const obj of this.drawObjs) {
+      if (obj.id === startId || obj.id === endId) {
+        obj.addBoundElement(arrow);
+      }
+    }
+
+    return arrow.id;
   }
 
   exportToFile(savePath: string): void {

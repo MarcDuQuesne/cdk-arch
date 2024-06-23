@@ -1,7 +1,7 @@
-import * as cdk from 'aws-cdk-lib';
-import { Aspects } from 'aws-cdk-lib';
 import * as fs from 'fs';
 import * as path from 'path';
+import * as cdk from 'aws-cdk-lib';
+import { Aspects } from 'aws-cdk-lib';
 import * as tmp from 'tmp-promise';
 import { ExampleStack } from '../examples/example-stack';
 import { Sketch } from '../src/cdk-arch/cdk';

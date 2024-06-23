@@ -1,11 +1,12 @@
 // export { Lambda } from './lambda';
 import * as fs from 'fs';
 import * as path from 'path';
+import { IConstruct } from 'constructs';
 import * as primitives from '../primitives';
 
 function capitalize(word: string): string {
   return word.charAt(0).toUpperCase() + word.slice(1);
-}
+};
 
 /**
  * This function reads an excalidraw (json) file and returns an array of ExcaliDrawPrimitives
@@ -28,8 +29,17 @@ export class Icon {
   readonly elements: primitives.ExcaliDrawPrimitive[];
   readonly iconPath: string = path.join(__dirname);
 
-  constructor() {
-    const iconFile= 'lambda.json';
+  readonly icons: { [key: string]: string } = {
+    Function: 'lambda.json',
+    Bucket: 'bucket.json',
+  };
+
+  constructor(node: IConstruct) {
+    const iconFile = this.icons[node.constructor.name];
     this.elements = read(path.join(this.iconPath, iconFile));
+
+    for (const element of this.elements) {
+      element.groupIds.push(node.node.id);
+    }
   };
 };
