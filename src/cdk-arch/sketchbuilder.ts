@@ -1,17 +1,17 @@
 import * as fs from 'fs';
 import * as primitives from './primitives';
 
-interface AppState {
-  viewBackgroundColor: string;
-  gridSize: number | null;
+export interface AppState {
+  readonly viewBackgroundColor: string;
+  readonly gridSize: number;
 }
 
-interface Data {
-  type: string;
-  version: number;
-  source: string;
-  elements: any[];
-  appState: AppState;
+export interface Data {
+  readonly type: string;
+  readonly version: number;
+  readonly source: string;
+  readonly elements: any[];
+  readonly appState: AppState;
 }
 
 export class SketchBuilder {
@@ -28,7 +28,7 @@ export class SketchBuilder {
       elements: [],
       appState: {
         viewBackgroundColor: '#ffffff',
-        gridSize: null,
+        gridSize: 1,
       },
     };
     this.drawObjs = [];
@@ -37,7 +37,7 @@ export class SketchBuilder {
 
   addElement(element: primitives.ExcaliDrawPrimitive): string {
     this.drawObjs.push(element);
-    return element.props.id;
+    return element.id;
   }
 
   exportToFile(savePath: string): void {

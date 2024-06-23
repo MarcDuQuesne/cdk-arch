@@ -63,12 +63,12 @@
     },
     {
       "name": "jsii-rosetta",
-      "version": "~5.0.0",
+      "version": "~5.4.0",
       "type": "build"
     },
     {
       "name": "jsii",
-      "version": "~5.0.0",
+      "version": "~5.4.0",
       "type": "build"
     },
     {
@@ -93,8 +93,12 @@
       "type": "build"
     },
     {
+      "name": "uuidv4",
+      "type": "bundled"
+    },
+    {
       "name": "aws-cdk-lib",
-      "version": "^2.110.1",
+      "version": "^2.116.0",
       "type": "peer"
     },
     {

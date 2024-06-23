@@ -8,7 +8,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   cdkVersion: cdkVersion,
   defaultReleaseBranch: 'main',
   minNodeVersion: '18.16.1',
-  jsiiVersion: '~5.0.0',
+  jsiiVersion: '~5.4.0',
   name: 'cdk-arch',
   projenrcTs: true,
   repositoryUrl: 'https://github.com/MarcDuQuesne/cdk-arch',
@@ -20,6 +20,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   description: 'L3-level cdk constructs for DMS',
   devDeps: ['eslint-plugin-cdk', 'cdk-nag'],
   peerDeps: [],
+  bundledDeps: ['uuidv4'],
   packageName: 'cdk-arch',
   gitignore: [
     'cdk.out',
