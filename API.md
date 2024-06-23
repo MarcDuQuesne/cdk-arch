@@ -17,7 +17,7 @@ const appState: AppState = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk-arch.AppState.property.gridSize">gridSize</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.AppState.property.gridSize">gridSize</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.AppState.property.viewBackgroundColor">viewBackgroundColor</a></code> | <code>string</code> | *No description.* |
 
 ---
@@ -25,10 +25,10 @@ const appState: AppState = { ... }
 ##### `gridSize`<sup>Required</sup> <a name="gridSize" id="cdk-arch.AppState.property.gridSize"></a>
 
 ```typescript
-public readonly gridSize: number;
+public readonly gridSize: any;
 ```
 
-- *Type:* number
+- *Type:* any
 
 ---
 
@@ -414,6 +414,133 @@ public readonly y: number;
 ```
 
 - *Type:* number
+
+---
+
+
+### Icon <a name="Icon" id="cdk-arch.Icon"></a>
+
+#### Initializers <a name="Initializers" id="cdk-arch.Icon.Initializer"></a>
+
+```typescript
+import { Icon } from 'cdk-arch'
+
+new Icon()
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-arch.Icon.property.elements">elements</a></code> | <code><a href="#cdk-arch.ExcaliDrawPrimitive">ExcaliDrawPrimitive</a>[]</code> | *No description.* |
+| <code><a href="#cdk-arch.Icon.property.iconPath">iconPath</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `elements`<sup>Required</sup> <a name="elements" id="cdk-arch.Icon.property.elements"></a>
+
+```typescript
+public readonly elements: ExcaliDrawPrimitive[];
+```
+
+- *Type:* <a href="#cdk-arch.ExcaliDrawPrimitive">ExcaliDrawPrimitive</a>[]
+
+---
+
+##### `iconPath`<sup>Required</sup> <a name="iconPath" id="cdk-arch.Icon.property.iconPath"></a>
+
+```typescript
+public readonly iconPath: string;
+```
+
+- *Type:* string
+
+---
+
+
+### Sketch <a name="Sketch" id="cdk-arch.Sketch"></a>
+
+- *Implements:* aws-cdk-lib.IAspect
+
+#### Initializers <a name="Initializers" id="cdk-arch.Sketch.Initializer"></a>
+
+```typescript
+import { Sketch } from 'cdk-arch'
+
+new Sketch()
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-arch.Sketch.visit">visit</a></code> | All aspects can visit an IConstruct. |
+
+---
+
+##### `visit` <a name="visit" id="cdk-arch.Sketch.visit"></a>
+
+```typescript
+public visit(node: IConstruct): void
+```
+
+All aspects can visit an IConstruct.
+
+###### `node`<sup>Required</sup> <a name="node" id="cdk-arch.Sketch.visit.parameter.node"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-arch.Sketch.exportToFile">exportToFile</a></code> | *No description.* |
+
+---
+
+##### `exportToFile` <a name="exportToFile" id="cdk-arch.Sketch.exportToFile"></a>
+
+```typescript
+import { Sketch } from 'cdk-arch'
+
+Sketch.exportToFile(filepath: string)
+```
+
+###### `filepath`<sup>Required</sup> <a name="filepath" id="cdk-arch.Sketch.exportToFile.parameter.filepath"></a>
+
+- *Type:* string
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-arch.Sketch.property.sketchBuilder">sketchBuilder</a></code> | <code><a href="#cdk-arch.SketchBuilder">SketchBuilder</a></code> | *No description.* |
+
+---
+
+##### `sketchBuilder`<sup>Required</sup> <a name="sketchBuilder" id="cdk-arch.Sketch.property.sketchBuilder"></a>
+
+```typescript
+public readonly sketchBuilder: SketchBuilder;
+```
+
+- *Type:* <a href="#cdk-arch.SketchBuilder">SketchBuilder</a>
 
 ---
 

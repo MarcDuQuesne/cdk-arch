@@ -1,5 +1,6 @@
-export { Lambda } from './lambda';
+// export { Lambda } from './lambda';
 import * as fs from 'fs';
+import * as path from 'path';
 import * as primitives from '../primitives';
 
 function capitalize(word: string): string {
@@ -22,4 +23,13 @@ export function read(filePath: string): primitives.ExcaliDrawPrimitive[] {
   return elements;
 }
 
-export const lambda = read('lambda.json');
+export class Icon {
+
+  readonly elements: primitives.ExcaliDrawPrimitive[];
+  readonly iconPath: string = path.join(__dirname);
+
+  constructor() {
+    const iconFile= 'lambda.json';
+    this.elements = read(path.join(this.iconPath, iconFile));
+  };
+};

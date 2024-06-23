@@ -8,14 +8,16 @@ tmp.setGracefulCleanup();
 
 test ('SketchBuilder', async () => {
 
-  const tmpDirectory = await tmp.dir({
-    unsafeCleanup: true,
-  });
+  // const tmpDirectory = await tmp.dir({
+  //   unsafeCleanup: true,
+  // });
+
+  const filepath = path.join('test.excalidraw');
 
   const sb = new SketchBuilder();
-  sb.addElement(new Rectangle({ x: 0, y: 0, width: 100, height: 100 }));
-  sb.exportToFile(path.join(tmpDirectory.path, 'test.excalidraw'));
-
-  expect(fs.existsSync(path.join(tmpDirectory.path, 'test.excalidraw'))).toBe(true);
+  const id = sb.addElement(new Rectangle({ x: 0, y: 0, width: 100, height: 100 }));
+  expect(id !== undefined);
+  sb.exportToFile(filepath);
+  expect(fs.existsSync(filepath)).toBe(true);
 
 });

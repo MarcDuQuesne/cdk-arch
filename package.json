@@ -56,7 +56,6 @@
     "jsii-rosetta": "~5.4.0",
     "projen": "^0.82.8",
     "standard-version": "^9",
-    "tmp-promise": "^3.0.3",
     "ts-jest": "^29.1.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.2"
@@ -66,9 +65,11 @@
     "constructs": "^10.0.5"
   },
   "dependencies": {
+    "tmp-promise": "^3.0.3",
     "uuidv4": "^6.2.13"
   },
   "bundledDependencies": [
+    "tmp-promise",
     "uuidv4"
   ],
   "keywords": [

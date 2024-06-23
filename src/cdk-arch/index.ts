@@ -1,2 +1,4 @@
+export { Sketch } from './cdk';
+export { Icon } from './icons';
 export { ExcaliDrawPrimitive, ExcaliDrawPrimitiveProps } from './primitives';
-export { SketchBuilder, Data, AppState } from './sketchbuilder';
+export { AppState, Data, SketchBuilder } from './sketchbuilder';

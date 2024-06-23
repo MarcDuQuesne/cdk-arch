@@ -12,15 +12,15 @@ const project = new awscdk.AwsCdkConstructLibrary({
   name: 'cdk-arch',
   projenrcTs: true,
   repositoryUrl: 'https://github.com/MarcDuQuesne/cdk-arch',
-  deps: [],
+  deps: ['tmp-promise'],
   publishToPypi: {
     distName: 'cdk-arch',
     module: 'cdk_arch',
   },
   description: 'L3-level cdk constructs for DMS',
-  devDeps: ['eslint-plugin-cdk', 'cdk-nag', 'tmp-promise'],
+  devDeps: ['eslint-plugin-cdk', 'cdk-nag'],
   peerDeps: [],
-  bundledDeps: ['uuidv4'],
+  bundledDeps: ['uuidv4', 'tmp-promise'],
   packageName: 'cdk-arch',
   gitignore: [
     'cdk.out',
