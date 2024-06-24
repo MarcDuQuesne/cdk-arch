@@ -1,5 +1,5 @@
-import { IConstruct, MetadataEntry } from 'constructs';
 import * as fs from 'fs';
+import { IConstruct, MetadataEntry } from 'constructs';
 import { Icon } from './icons';
 import * as primitives from './primitives';
 
@@ -95,12 +95,12 @@ export class SketchBuilder {
     ];
 
     // Apply magic gap
-    let sign = compareNumbers(points[0][0], points[1][0])
+    let sign = compareNumbers(points[0][0], points[1][0]);
     points[0][0] -= sign * startIcon.box.width * this.arrowIconGap;
     points[1][0] += sign * endIcon.box.width * this.arrowIconGap;
 
     // Apply magic gap
-    sign = compareNumbers(points[0][1], points[1][1])
+    sign = compareNumbers(points[0][1], points[1][1]);
     points[0][1] -= sign * startIcon.box.width * this.arrowIconGap;
     points[1][1] += sign * startIcon.box.width * this.arrowIconGap;
 

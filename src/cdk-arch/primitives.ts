@@ -106,7 +106,7 @@ export interface Binding {
   readonly gap: number;
 }
 
-interface DrawnObjectProps extends ExcaliDrawPrimitiveProps {
+export interface DrawnObjectProps extends ExcaliDrawPrimitiveProps {
 
   readonly strokeWidth?: number;
   readonly strokeStyle?: StrokeStyle;
@@ -119,16 +119,16 @@ interface DrawnObjectProps extends ExcaliDrawPrimitiveProps {
 
 }
 
-abstract class DrawnObject extends ExcaliDrawPrimitive {
+export abstract class DrawnObject extends ExcaliDrawPrimitive {
 
-  strokeColor: string;
-  strokeWidth: number;
-  strokeStyle: StrokeStyle;
-  fillStyle: FillStyle;
-  roughness: number;
-  opacity: number;
-  backgroundColor: string;
-  roundness: any;
+  readonly strokeColor: string;
+  readonly strokeWidth: number;
+  readonly strokeStyle: StrokeStyle;
+  readonly fillStyle: FillStyle;
+  readonly roughness: number;
+  readonly opacity: number;
+  readonly backgroundColor: string;
+  readonly roundness: any;
 
   constructor(args: DrawnObjectProps) {
 
@@ -144,7 +144,7 @@ abstract class DrawnObject extends ExcaliDrawPrimitive {
   }
 }
 
-interface LineLikeObjectProps extends DrawnObjectProps {
+export interface LineLikeProps extends DrawnObjectProps {
 
   readonly startBinding?: any;
   readonly endBinding?: any;
@@ -154,15 +154,15 @@ interface LineLikeObjectProps extends DrawnObjectProps {
 
 }
 
-abstract class LineLikeObject extends DrawnObject {
+export abstract class LineLike extends DrawnObject {
 
-  startBinding: any;
-  endBinding: any;
-  lastCommittedPoint: any;
-  startArrowhead: any;
-  endArrowhead: any;
+  readonly startBinding: any;
+  readonly endBinding: any;
+  readonly lastCommittedPoint: any;
+  readonly startArrowhead: any;
+  readonly endArrowhead: any;
 
-  constructor(args: LineLikeObjectProps) {
+  constructor(args: LineLikeProps) {
     super(args);
     this.startBinding = args.startBinding || this.startBinding;
     this.endBinding = args.endBinding || this.endBinding;
@@ -172,49 +172,29 @@ abstract class LineLikeObject extends DrawnObject {
   }
 }
 
+export interface LineProps extends LineLikeProps {
 
-export interface LineProps extends LineLikeObjectProps {
-
-  readonly roughness?: number;
-  readonly opacity?: number;
-  readonly strokeColor?: string;
-  readonly backgroundColor?: string;
-  readonly startBinding?: any;
-  readonly endBinding?: any;
-  readonly lastCommittedPoint?: any;
-  readonly startArrowhead?: any;
-  readonly endArrowhead?: any;
   readonly points?: number[][];
 
 }
 
-export class Line extends LineLikeObject {
+export class Line extends LineLike {
 
-  startBinding: any = null;
-  endBinding: any = null;
-  lastCommittedPoint: any = null;
-  startArrowhead: any = null;
-  endArrowhead: any = null;
   points: number[][] = [];
 
   constructor(args: LineProps) {
 
     super(args);
-    this.startBinding = args.startBinding || this.startBinding;
-    this.endBinding = args.endBinding || this.endBinding;
-    this.lastCommittedPoint = args.lastCommittedPoint || this.lastCommittedPoint;
-    this.startArrowhead = args.startArrowhead || this.startArrowhead;
-    this.endArrowhead = args.endArrowhead || this.endArrowhead;
     this.points = args.points || this.points;
   }
 }
 
 
-export interface RectangleProps extends LineLikeObject { }
+export interface RectangleProps extends LineLikeProps { }
 
 export class Rectangle extends DrawnObject {
 
-  constructor(args: LineLikeObjectProps) {
+  constructor(args: LineLikeProps) {
     super({
       type: PrimitiveType.RECTANGLE,
       ...args,
@@ -222,11 +202,11 @@ export class Rectangle extends DrawnObject {
   }
 }
 
-export interface EllipseProps extends LineLikeObject { }
+export interface EllipseProps extends LineLikeProps { }
 
 export class Ellipse extends DrawnObject {
 
-  constructor(args: LineLikeObjectProps) {
+  constructor(args: EllipseProps) {
     super({
       type: PrimitiveType.ELLIPSE,
       ...args,
@@ -238,7 +218,7 @@ export interface ArrowProps extends LineProps { }
 
 export class Arrow extends Line {
 
-  constructor(args: LineProps) {
+  constructor(args: ArrowProps) {
     super({
       type: PrimitiveType.ARROW,
       endArrowhead: ArrowHead.TRIANGLE,
@@ -280,9 +260,9 @@ export class Text extends DrawnObject {
   constructor(args: TextProps) {
     super({
       type: PrimitiveType.TEXT,
-      strokeColor: "#1e1e1e",
+      strokeColor: '#1e1e1e',
       fillStyle: FillStyle.SOLID,
-      backgroundColor: "transparent",
+      backgroundColor: 'transparent',
       originalText: args.text,
       baseline: 18,
       roundness: null,

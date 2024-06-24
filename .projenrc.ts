@@ -41,6 +41,7 @@ project.eslint?.addRules({
   'cdk/no-static-import': 'error',
   'cdk/stack-props-struct-name': 'error',
   'cdk/prefer-type-only-imports': 'error',
+  '@typescript-eslint/member-ordering': 'warn',
 });
 
 project.synth();
