@@ -1515,33 +1515,6 @@ public addBoundElement(element: ExcaliDrawPrimitive): void
 
 ---
 
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#cdk-arch.Arrow.connector">connector</a></code> | *No description.* |
-
----
-
-##### `connector` <a name="connector" id="cdk-arch.Arrow.connector"></a>
-
-```typescript
-import { Arrow } from 'cdk-arch'
-
-Arrow.connector(startId: string, endId: string)
-```
-
-###### `startId`<sup>Required</sup> <a name="startId" id="cdk-arch.Arrow.connector.parameter.startId"></a>
-
-- *Type:* string
-
----
-
-###### `endId`<sup>Required</sup> <a name="endId" id="cdk-arch.Arrow.connector.parameter.endId"></a>
-
-- *Type:* string
-
----
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -3476,12 +3449,18 @@ public addArrow(startNodeId: string, endNodeId: string): string
 ##### `addIcon` <a name="addIcon" id="cdk-arch.SketchBuilder.addIcon"></a>
 
 ```typescript
-public addIcon(icon: Icon): void
+public addIcon(node: IConstruct, metadata: MetadataEntry): void
 ```
 
-###### `icon`<sup>Required</sup> <a name="icon" id="cdk-arch.SketchBuilder.addIcon.parameter.icon"></a>
+###### `node`<sup>Required</sup> <a name="node" id="cdk-arch.SketchBuilder.addIcon.parameter.node"></a>
 
-- *Type:* <a href="#cdk-arch.Icon">Icon</a>
+- *Type:* constructs.IConstruct
+
+---
+
+###### `metadata`<sup>Required</sup> <a name="metadata" id="cdk-arch.SketchBuilder.addIcon.parameter.metadata"></a>
+
+- *Type:* constructs.MetadataEntry
 
 ---
 
@@ -3532,9 +3511,20 @@ public visit(node: IConstruct): void
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#cdk-arch.SketchBuilder.property.arrowIconGap">arrowIconGap</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.SketchBuilder.property.arrows">arrows</a></code> | <code><a href="#cdk-arch.Arrow">Arrow</a>[]</code> | *No description.* |
 | <code><a href="#cdk-arch.SketchBuilder.property.data">data</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.SketchBuilder.property.icons">icons</a></code> | <code><a href="#cdk-arch.Icon">Icon</a>[]</code> | *No description.* |
+| <code><a href="#cdk-arch.SketchBuilder.property.icons">icons</a></code> | <code>{[ key: string ]: <a href="#cdk-arch.Icon">Icon</a>}</code> | *No description.* |
+
+---
+
+##### `arrowIconGap`<sup>Required</sup> <a name="arrowIconGap" id="cdk-arch.SketchBuilder.property.arrowIconGap"></a>
+
+```typescript
+public readonly arrowIconGap: number;
+```
+
+- *Type:* number
 
 ---
 
@@ -3561,10 +3551,10 @@ public readonly data: any;
 ##### `icons`<sup>Required</sup> <a name="icons" id="cdk-arch.SketchBuilder.property.icons"></a>
 
 ```typescript
-public readonly icons: Icon[];
+public readonly icons: {[ key: string ]: Icon};
 ```
 
-- *Type:* <a href="#cdk-arch.Icon">Icon</a>[]
+- *Type:* {[ key: string ]: <a href="#cdk-arch.Icon">Icon</a>}
 
 ---
 

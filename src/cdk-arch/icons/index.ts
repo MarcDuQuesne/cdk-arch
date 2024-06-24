@@ -1,7 +1,7 @@
 // export { Lambda } from './lambda';
-import { IConstruct } from 'constructs';
 import * as fs from 'fs';
 import * as path from 'path';
+import { IConstruct } from 'constructs';
 import { uuid } from 'uuidv4';
 import * as primitives from '../primitives';
 

@@ -1,5 +1,5 @@
-import { IConstruct, MetadataEntry } from 'constructs';
 import * as fs from 'fs';
+import { IConstruct, MetadataEntry } from 'constructs';
 import { Icon } from './icons';
 import * as primitives from './primitives';
 
