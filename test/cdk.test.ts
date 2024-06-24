@@ -24,10 +24,11 @@ test('CDK Architecture from Stack', async () => {
     },
   });
 
-  Aspects.of(app).add(new SketchBuilder());
+  const sketchbuilder = new SketchBuilder();
+  Aspects.of(app).add(sketchbuilder);
 
   app.synth();
-  SketchBuilder.exportToFile(filepath);
+  sketchbuilder.exportToFile(filepath);
 
   expect(fs.existsSync(filepath)).toBe(true);
 });

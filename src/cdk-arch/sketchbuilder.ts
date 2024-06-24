@@ -1,4 +1,4 @@
-import { IConstruct } from 'constructs';
+import { IConstruct, MetadataEntry } from 'constructs';
 import * as fs from 'fs';
 import { Icon } from './icons';
 import * as primitives from './primitives';
@@ -11,8 +11,10 @@ export interface AppState {
 export class SketchBuilder {
 
   data: any;
-  icons: Icon[];
+  icons: { [key: string]: Icon } = {};
   arrows: primitives.Arrow[] = [];
+
+  arrowIconGap: number = 0.2;
 
   private delayedArrows: any[] = [];
 
@@ -27,7 +29,7 @@ export class SketchBuilder {
         gridSize: null,
       },
     };
-    this.icons = [];
+    this.icons = {};
   }
 
   public visit(node: IConstruct): void {
@@ -38,7 +40,7 @@ export class SketchBuilder {
 
     for (const metadata of metadataList) {
       if (metadata.type === 'CDKArch Element') {
-        this.addIcon(new Icon(node));
+        this.addIcon(node, metadata);
       }
       if (metadata.type === 'CDKArch Connection') {
         this.registerArrow(metadata.data.startId, metadata.data.endId);
@@ -52,8 +54,10 @@ export class SketchBuilder {
   //   return element.id;
   // }
 
-  addIcon(icon: Icon): void {
-    this.icons.push(icon);
+  addIcon(node: IConstruct, metadata: MetadataEntry): void {
+
+    this.icons[node.node.id] = new Icon(node);
+    this.icons[node.node.id].moveIcon(metadata.data.x, metadata.data.y);
   }
 
   // We register the need for a connection, but delay this up to when all the icons are there.
@@ -63,17 +67,34 @@ export class SketchBuilder {
 
   addArrow(startNodeId: string, endNodeId: string): string {
 
-    // find an icon in this.Icon that contains a groupId called startnodeId, and return the boundaryBox Id.
-    const startIcon = this.icons.find(icon => icon.box.groupIds.includes(startNodeId));
-    const endIcon = this.icons.find(icon => icon.box.groupIds.includes(endNodeId));
-    if (!startIcon) {
+    if (!(startNodeId in this.icons)) {
       throw new Error(`Icon with group ID ${startNodeId} not found.`);
     }
-    if (!endIcon) {
+    if (!(endNodeId !in this.icons)) {
       throw new Error(`Icon with group ID ${endNodeId} not found.`);
     }
 
-    const arrow = primitives.Arrow.connector(startIcon.box.id, endIcon.box.id);
+
+    // find an icon in this.Icon that contains a groupId called startnodeId, and return the boundaryBox Id.
+    const startIcon = this.icons[startNodeId];
+    const endIcon = this.icons[endNodeId];
+    const points = [
+      [startIcon.box.width * 0.2, startIcon.box.height * this.arrowIconGap],
+      [
+        endIcon.box.x - startIcon.box.x - endIcon.box.width * (1 + this.arrowIconGap),
+        endIcon.box.y - startIcon.box.y - endIcon.box.height * (1 + this.arrowIconGap),
+      ],
+    ];
+
+    const arrow = new primitives.Arrow({
+      startBinding: { elementId: startIcon.box.id, focus: 0, gap: startIcon.box.height * this.arrowIconGap },
+      endBinding: { elementId: endIcon.box.id, focus: 0, gap: endIcon.box.height * this.arrowIconGap },
+      points: points,
+      x: startIcon.box.x + startIcon.box.width,
+      y: startIcon.box.y + startIcon.box.height,
+      width: points[1][0] - points[0][0],
+      height: points[1][1] - points[0][1],
+    });
     this.arrows.push(arrow);
 
     for (const obj of [startIcon.box, endIcon.box]) {
@@ -83,7 +104,7 @@ export class SketchBuilder {
   }
 
   exportToFile(savePath: string): void {
-    for (const icon of this.icons) {
+    for (const icon of Object.values(this.icons)) {
       this.data.elements = this.data.elements.concat(icon.elements());
     }
 

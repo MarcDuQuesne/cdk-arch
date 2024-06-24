@@ -225,13 +225,6 @@ export interface ArrowProps extends LineProps { }
 
 export class Arrow extends Line {
 
-  static connector(startId: string, endId: string) {
-    return new Arrow({
-      startBinding: { elementId: startId, focus: 0, gap: 20 },
-      endBinding: { elementId: endId, focus: 0, gap: 40 },
-    });
-  }
-
   constructor(args: LineProps) {
     super({
       type: PrimitiveType.ARROW,
@@ -240,11 +233,6 @@ export class Arrow extends Line {
       backgroundColor: 'transparent',
       strokeWidth: 2,
       fillStyle: FillStyle.SOLID,
-      points: [[0, 0], [100, 100]],
-      x: 0,
-      y: 0,
-      width: 100,
-      height: 100,
       ...args,
     });
 
