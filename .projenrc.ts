@@ -27,7 +27,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
     '*.js',
     '*.d.ts',
     '.github-token',
-    '.pypi*',
+    '.pypi-token',
+    '.npm-token',
   ],
 });
 
