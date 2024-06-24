@@ -7,7 +7,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   authorAddress: 'matteo.giani.87@gmail.com',
   cdkVersion: cdkVersion,
   defaultReleaseBranch: 'main',
-  minNodeVersion: '18.16.1',
+  minNodeVersion: '20.14.0',
   jsiiVersion: '~5.4.0',
   name: 'cdk-arch',
   projenrcTs: true,
