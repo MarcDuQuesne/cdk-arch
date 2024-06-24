@@ -1,6 +1,6 @@
 {
   "name": "cdk-arch",
-  "description": "L3-level cdk constructs for DMS",
+  "description": "Generating AWS CDK architecture diagrams from CDK projects with Excalidraw",
   "repository": {
     "type": "git",
     "url": "https://github.com/MarcDuQuesne/cdk-arch"

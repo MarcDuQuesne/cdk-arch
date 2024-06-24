@@ -17,7 +17,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     distName: 'cdk-arch',
     module: 'cdk_arch',
   },
-  description: 'L3-level cdk constructs for DMS',
+  description: 'Generating AWS CDK architecture diagrams from CDK projects with Excalidraw',
   devDeps: ['eslint-plugin-cdk', 'cdk-nag'],
   peerDeps: [],
   bundledDeps: ['uuidv4', 'tmp-promise'],
