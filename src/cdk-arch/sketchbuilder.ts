@@ -1,49 +1,121 @@
 import * as fs from 'fs';
+import { IConstruct, MetadataEntry } from 'constructs';
+import { Icon } from './icons';
 import * as primitives from './primitives';
 
-interface AppState {
-  viewBackgroundColor: string;
-  gridSize: number | null;
-}
-
-interface Data {
-  type: string;
-  version: number;
-  source: string;
-  elements: any[];
-  appState: AppState;
+export interface AppState {
+  readonly viewBackgroundColor: string;
+  readonly gridSize: any;
 }
 
 export class SketchBuilder {
 
-  data: Data;
-  drawObjs: any[];
-  groups: any[];
+  data: any;
+  icons: { [key: string]: Icon } = {};
+  arrows: primitives.Arrow[] = [];
+
+  arrowIconGap: number = 0.2;
+
+  private delayedArrows: any[] = [];
 
   constructor() {
     this.data = {
       type: 'excalidraw',
       version: 1,
-      source: 'procXD',
+      source: 'CDK Arch Sketch Builder',
       elements: [],
       appState: {
         viewBackgroundColor: '#ffffff',
         gridSize: null,
       },
     };
-    this.drawObjs = [];
-    this.groups = [];
+    this.icons = {};
   }
 
-  addElement(element: primitives.ExcaliDrawPrimitive): string {
-    this.drawObjs.push(element);
-    return element.props.id;
+  public visit(node: IConstruct): void {
+
+    const metadataList = node.node.metadata;
+
+    // if the medatadat contains 'CDKArch':
+
+    for (const metadata of metadataList) {
+      if (metadata.type === 'CDKArch Element') {
+        this.addIcon(node, metadata);
+      }
+      if (metadata.type === 'CDKArch Connection') {
+        this.registerArrow(metadata.data.startId, metadata.data.endId);
+      }
+
+    }
+  }
+
+  // addElement(element: primitives.ExcaliDrawPrimitive): string {
+  //   this.drawObjs.push(element);
+  //   return element.id;
+  // }
+
+  addIcon(node: IConstruct, metadata: MetadataEntry): void {
+
+    this.icons[node.node.id] = new Icon(node);
+    this.icons[node.node.id].moveIcon(metadata.data.x, metadata.data.y);
+  }
+
+  // We register the need for a connection, but delay this up to when all the icons are there.
+  registerArrow(startNodeId: string, endNodeId: string) {
+    this.delayedArrows.push([startNodeId, endNodeId]);
+  }
+
+  addArrow(startNodeId: string, endNodeId: string): string {
+
+    if (!(startNodeId in this.icons)) {
+      throw new Error(`Icon with group ID ${startNodeId} not found.`);
+    }
+    if (!(endNodeId !in this.icons)) {
+      throw new Error(`Icon with group ID ${endNodeId} not found.`);
+    }
+
+
+    // find an icon in this.Icon that contains a groupId called startnodeId, and return the boundaryBox Id.
+    const startIcon = this.icons[startNodeId];
+    const endIcon = this.icons[endNodeId];
+    const points = [
+      [startIcon.box.width * 0.2, startIcon.box.height * this.arrowIconGap],
+      [
+        endIcon.box.x - startIcon.box.x - endIcon.box.width * (1 + this.arrowIconGap),
+        endIcon.box.y - startIcon.box.y - endIcon.box.height * (1 + this.arrowIconGap),
+      ],
+    ];
+
+    const arrow = new primitives.Arrow({
+      startBinding: { elementId: startIcon.box.id, focus: 0, gap: startIcon.box.height * this.arrowIconGap },
+      endBinding: { elementId: endIcon.box.id, focus: 0, gap: endIcon.box.height * this.arrowIconGap },
+      points: points,
+      x: startIcon.box.x + startIcon.box.width,
+      y: startIcon.box.y + startIcon.box.height,
+      width: points[1][0] - points[0][0],
+      height: points[1][1] - points[0][1],
+    });
+    this.arrows.push(arrow);
+
+    for (const obj of [startIcon.box, endIcon.box]) {
+      obj.addBoundElement(arrow);
+    }
+    return arrow.id;
   }
 
   exportToFile(savePath: string): void {
-    for (const element of this.drawObjs) {
-      this.data.elements.push(element.props);
+    for (const icon of Object.values(this.icons)) {
+      this.data.elements = this.data.elements.concat(icon.elements());
     }
+
+    for (const [startId, endId] of this.delayedArrows) {
+      this.addArrow(startId, endId);
+    }
+
+    for (const arrow of this.arrows) {
+      this.data.elements.push(arrow);
+    }
+
 
     if (!savePath.endsWith('.excalidraw')) {
       savePath += '.excalidraw';
