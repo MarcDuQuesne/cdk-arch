@@ -50,7 +50,7 @@ export class SketchBuilder {
 
     for (const metadata of metadataList) {
       if (metadata.type === 'CDKArch Element') {
-        this.addIcon(node, metadata);
+        this.addIconForConstruct(node, metadata);
       }
       if (metadata.type === 'CDKArch Connection') {
         this.registerArrow(metadata.data.startId, metadata.data.endId);
@@ -59,9 +59,12 @@ export class SketchBuilder {
     }
   }
 
-  addIcon(node: IConstruct, metadata: MetadataEntry): void {
-    this.icons[node.node.id] = new Icon(node);
+  addIconForConstruct(node: IConstruct, metadata: MetadataEntry): void {
+    this.icons[node.node.id] = Icon.fromConstruct(node);
     this.icons[node.node.id].moveIcon(metadata.data.x, metadata.data.y);
+    if ('text' in metadata.data) {
+      this.icons[node.node.id].text.text = metadata.data.text;
+    }
   }
 
   // We register the need for a connection, but delay this up to when all the icons are there.
@@ -77,7 +80,6 @@ export class SketchBuilder {
     if (!(endNodeId! in this.icons)) {
       throw new Error(`Icon with group ID ${endNodeId} not found.`);
     }
-
 
     // find an icon in this.Icon that contains a groupId called startnodeId, and return the boundaryBox Id.
     const startIcon = this.icons[startNodeId];

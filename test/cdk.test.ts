@@ -10,11 +10,10 @@ tmp.setGracefulCleanup();
 
 test('CDK Architecture from Stack', async () => {
 
-  // const tmpDirectory = await tmp.dir({
-  //   unsafeCleanup: true,
-  // });
-  // const filepath = path.join(tmpDirectory.path, 'test.excalidraw');
-  const filepath = path.join('test.excalidraw');
+  const tmpDirectory = await tmp.dir({
+    unsafeCleanup: true,
+  });
+  const filepath = path.join(tmpDirectory.path, 'test.excalidraw');
 
   const app = new cdk.App();
   new ExampleStack(app, 'ExampleStack', {

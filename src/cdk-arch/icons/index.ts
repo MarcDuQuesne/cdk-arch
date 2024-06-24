@@ -1,7 +1,7 @@
 // export { Lambda } from './lambda';
+import { IConstruct } from 'constructs';
 import * as fs from 'fs';
 import * as path from 'path';
-import { IConstruct } from 'constructs';
 import { uuid } from 'uuidv4';
 import * as primitives from '../primitives';
 
@@ -12,26 +12,30 @@ function capitalize(word: string): string {
 
 export class Icon {
 
-  public iconElements: primitives.ExcaliDrawPrimitive[] = [];
-  public box: primitives.Rectangle = new primitives.Rectangle({});
-  public text: primitives.Text = new primitives.Text({ originalText: '' });
+  static readonly iconPath: string = path.join(__dirname);
 
-  readonly iconPath: string = path.join(__dirname);
-
-  readonly icons: { [key: string]: string } = {
+  // Supported icons
+  static readonly icons: { [key: string]: string } = {
     Function: 'lambda.json',
     Bucket: 'bucket.json',
   };
 
+  public iconElements: primitives.ExcaliDrawPrimitive[] = [];
+  public box: primitives.Rectangle = new primitives.Rectangle({});
+  public text: primitives.Text = new primitives.Text({ text: '' });
 
-  constructor(node: IConstruct) {
+  static fromConstruct(node: IConstruct): Icon {
     const iconFile = path.join(this.iconPath, this.icons[node.constructor.name]);
-    const iconGroupId = uuid();
-    this.loadJsonIcon(iconFile, node, iconGroupId);
-  };
+    const icon = new Icon();
+    icon.loadJsonIcon(iconFile, node);
+    icon.text.text = node.node.id;
+    return icon;
+  }
 
-  public loadJsonIcon(iconFile: string, node: IConstruct, iconGroupId: string): void {
+  public loadJsonIcon(iconFile: string, node: IConstruct): void {
     const content = JSON.parse(fs.readFileSync(iconFile, 'utf8'));
+    const iconGroupId = uuid();
+
     for (const element of content.elements) {
 
       const obj = new (<any>primitives)[capitalize(element.type)](element);

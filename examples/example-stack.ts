@@ -1,4 +1,3 @@
-
 import * as cdk from 'aws-cdk-lib';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as s3 from 'aws-cdk-lib/aws-s3';
@@ -27,8 +26,8 @@ export class ExampleStack extends cdk.Stack {
     });
 
     // We add some metadata to the resources to be able to position them in the diagram
-    bucket.node.addMetadata('CDKArch Element', { x: 100, y: 200 });
-    lfunction.node.addMetadata('CDKArch Element', { x: 400, y: 800 });
+    bucket.node.addMetadata('CDKArch Element', { x: 0, y: 0});
+    lfunction.node.addMetadata('CDKArch Element', { x: 300, y: 0 });
     // We add a connection between the bucket and the lambda function
     bucket.node.addMetadata('CDKArch Connection', { startId: bucket.node.id, endId: lfunction.node.id });
 

@@ -101,7 +101,23 @@ and we added an aspect to the app to instruct the SketchBuilder to generate it w
 
 This is the resulting diagram:
 
-![Example Diagram](./examples/simple_case.png)
+![Example Diagram](./examples/example/example.png)
+
+### Customizing the diagram
+
+#### Positioning the resources
+The position of the resources in the diagram can be customized using the 'x' and 'y' fields in the metadata of the node:
+
+```typescript
+bucket.node.addMetadata('CDKArch Element', { x: 100, y: 200 });
+```
+
+#### Name of the resouces
+By default, the name of the resources is the id of the node. This can be customized by adding a 'text' field to the metadata of the node:
+
+```typescript
+bucket.node.addMetadata('CDKArch Element', { x: 100, y: 200, text: 'Overriding the bucket name' });
+```
 
 # Contributors
 
