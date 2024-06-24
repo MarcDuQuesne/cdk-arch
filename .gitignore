@@ -33,7 +33,7 @@ jspm_packages/
 cdk.out
 *.js
 *.d.ts
-.github*
+.github-token
 .pypi*
 /test-reports/
 junit.xml
