@@ -1,5 +1,5 @@
-import * as fs from 'fs';
 import { IConstruct, MetadataEntry } from 'constructs';
+import * as fs from 'fs';
 import { Icon } from './icons';
 import * as primitives from './primitives';
 
@@ -8,13 +8,23 @@ export interface AppState {
   readonly gridSize: any;
 }
 
+function compareNumbers(a: number, b: number): number {
+  if (a - b > 1) {
+    return 1;
+  } else if ((a - b < 1) && (a - b > 0)) {
+    return 0;
+  } else {
+    return -1;
+  }
+}
+
 export class SketchBuilder {
 
   data: any;
   icons: { [key: string]: Icon } = {};
   arrows: primitives.Arrow[] = [];
 
-  arrowIconGap: number = 0.2;
+  arrowIconGap: number = 0.75; // 0.5 is the minimum to make the arrow not touch the icon
 
   private delayedArrows: any[] = [];
 
@@ -49,13 +59,7 @@ export class SketchBuilder {
     }
   }
 
-  // addElement(element: primitives.ExcaliDrawPrimitive): string {
-  //   this.drawObjs.push(element);
-  //   return element.id;
-  // }
-
   addIcon(node: IConstruct, metadata: MetadataEntry): void {
-
     this.icons[node.node.id] = new Icon(node);
     this.icons[node.node.id].moveIcon(metadata.data.x, metadata.data.y);
   }
@@ -70,7 +74,7 @@ export class SketchBuilder {
     if (!(startNodeId in this.icons)) {
       throw new Error(`Icon with group ID ${startNodeId} not found.`);
     }
-    if (!(endNodeId !in this.icons)) {
+    if (!(endNodeId! in this.icons)) {
       throw new Error(`Icon with group ID ${endNodeId} not found.`);
     }
 
@@ -78,20 +82,33 @@ export class SketchBuilder {
     // find an icon in this.Icon that contains a groupId called startnodeId, and return the boundaryBox Id.
     const startIcon = this.icons[startNodeId];
     const endIcon = this.icons[endNodeId];
+
+    // points without gap
     const points = [
-      [startIcon.box.width * 0.2, startIcon.box.height * this.arrowIconGap],
+      [0, 0],
       [
-        endIcon.box.x - startIcon.box.x - endIcon.box.width * (1 + this.arrowIconGap),
-        endIcon.box.y - startIcon.box.y - endIcon.box.height * (1 + this.arrowIconGap),
+        endIcon.box.x - startIcon.box.x + (endIcon.box.width - startIcon.box.width) / 2,
+        endIcon.box.y - startIcon.box.y + (endIcon.box.height - startIcon.box.width) / 2,
       ],
     ];
 
+    // Apply magic gap
+    let sign = compareNumbers(points[0][0], points[1][0])
+    points[0][0] -= sign * startIcon.box.width * this.arrowIconGap;
+    points[1][0] += sign * endIcon.box.width * this.arrowIconGap;
+
+    // Apply magic gap
+    sign = compareNumbers(points[0][1], points[1][1])
+    points[0][1] -= sign * startIcon.box.width * this.arrowIconGap;
+    points[1][1] += sign * startIcon.box.width * this.arrowIconGap;
+
+
     const arrow = new primitives.Arrow({
-      startBinding: { elementId: startIcon.box.id, focus: 0, gap: startIcon.box.height * this.arrowIconGap },
-      endBinding: { elementId: endIcon.box.id, focus: 0, gap: endIcon.box.height * this.arrowIconGap },
+      startBinding: { elementId: startIcon.box.id, focus: 0, gap: startIcon.box.height * (this.arrowIconGap - 0.5) },
+      endBinding: { elementId: endIcon.box.id, focus: 0, gap: endIcon.box.height * (this.arrowIconGap - 0.5) },
       points: points,
-      x: startIcon.box.x + startIcon.box.width,
-      y: startIcon.box.y + startIcon.box.height,
+      x: startIcon.box.x + startIcon.box.width / 2,
+      y: startIcon.box.y + startIcon.box.height / 2,
       width: points[1][0] - points[0][0],
       height: points[1][1] - points[0][1],
     });
