@@ -205,22 +205,7 @@
     "no-bitwise": [
       "error"
     ],
-    "@typescript-eslint/member-ordering": [
-      "error",
-      {
-        "default": [
-          "public-static-field",
-          "public-static-method",
-          "protected-static-field",
-          "protected-static-method",
-          "private-static-field",
-          "private-static-method",
-          "field",
-          "constructor",
-          "method"
-        ]
-      }
-    ],
+    "@typescript-eslint/member-ordering": "warn",
     "cdk/construct-ctor": "error",
     "cdk/construct-props-struct-name": "error",
     "cdk/public-static-property-all-caps": "error",

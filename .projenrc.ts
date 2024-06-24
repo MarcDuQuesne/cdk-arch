@@ -27,7 +27,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
     '*.js',
     '*.d.ts',
     '.github-token',
-    '.pypi*',
+    '.pypi-token',
+    '.npm-token',
   ],
 });
 
@@ -40,6 +41,7 @@ project.eslint?.addRules({
   'cdk/no-static-import': 'error',
   'cdk/stack-props-struct-name': 'error',
   'cdk/prefer-type-only-imports': 'error',
+  '@typescript-eslint/member-ordering': 'warn',
 });
 
 project.synth();

@@ -63,19 +63,19 @@ const arrowProps: ArrowProps = { ... }
 | <code><a href="#cdk-arch.ArrowProps.property.x">x</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.ArrowProps.property.y">y</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.ArrowProps.property.backgroundColor">backgroundColor</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-arch.ArrowProps.property.endArrowhead">endArrowhead</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.ArrowProps.property.endBinding">endBinding</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.ArrowProps.property.fillStyle">fillStyle</a></code> | <code><a href="#cdk-arch.FillStyle">FillStyle</a></code> | *No description.* |
-| <code><a href="#cdk-arch.ArrowProps.property.lastCommittedPoint">lastCommittedPoint</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.ArrowProps.property.opacity">opacity</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-arch.ArrowProps.property.points">points</a></code> | <code>number[][]</code> | *No description.* |
 | <code><a href="#cdk-arch.ArrowProps.property.roughness">roughness</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.ArrowProps.property.roundness">roundness</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.ArrowProps.property.startArrowhead">startArrowhead</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.ArrowProps.property.startBinding">startBinding</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.ArrowProps.property.strokeColor">strokeColor</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-arch.ArrowProps.property.strokeStyle">strokeStyle</a></code> | <code><a href="#cdk-arch.StrokeStyle">StrokeStyle</a></code> | *No description.* |
 | <code><a href="#cdk-arch.ArrowProps.property.strokeWidth">strokeWidth</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.ArrowProps.property.endArrowhead">endArrowhead</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.ArrowProps.property.endBinding">endBinding</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.ArrowProps.property.lastCommittedPoint">lastCommittedPoint</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.ArrowProps.property.startArrowhead">startArrowhead</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.ArrowProps.property.startBinding">startBinding</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.ArrowProps.property.points">points</a></code> | <code>number[][]</code> | *No description.* |
 
 ---
 
@@ -149,26 +149,6 @@ public readonly backgroundColor: string;
 
 ---
 
-##### `endArrowhead`<sup>Optional</sup> <a name="endArrowhead" id="cdk-arch.ArrowProps.property.endArrowhead"></a>
-
-```typescript
-public readonly endArrowhead: any;
-```
-
-- *Type:* any
-
----
-
-##### `endBinding`<sup>Optional</sup> <a name="endBinding" id="cdk-arch.ArrowProps.property.endBinding"></a>
-
-```typescript
-public readonly endBinding: any;
-```
-
-- *Type:* any
-
----
-
 ##### `fillStyle`<sup>Optional</sup> <a name="fillStyle" id="cdk-arch.ArrowProps.property.fillStyle"></a>
 
 ```typescript
@@ -179,16 +159,6 @@ public readonly fillStyle: FillStyle;
 
 ---
 
-##### `lastCommittedPoint`<sup>Optional</sup> <a name="lastCommittedPoint" id="cdk-arch.ArrowProps.property.lastCommittedPoint"></a>
-
-```typescript
-public readonly lastCommittedPoint: any;
-```
-
-- *Type:* any
-
----
-
 ##### `opacity`<sup>Optional</sup> <a name="opacity" id="cdk-arch.ArrowProps.property.opacity"></a>
 
 ```typescript
@@ -196,16 +166,6 @@ public readonly opacity: number;
 ```
 
 - *Type:* number
-
----
-
-##### `points`<sup>Optional</sup> <a name="points" id="cdk-arch.ArrowProps.property.points"></a>
-
-```typescript
-public readonly points: number[][];
-```
-
-- *Type:* number[][]
 
 ---
 
@@ -223,26 +183,6 @@ public readonly roughness: number;
 
 ```typescript
 public readonly roundness: any;
-```
-
-- *Type:* any
-
----
-
-##### `startArrowhead`<sup>Optional</sup> <a name="startArrowhead" id="cdk-arch.ArrowProps.property.startArrowhead"></a>
-
-```typescript
-public readonly startArrowhead: any;
-```
-
-- *Type:* any
-
----
-
-##### `startBinding`<sup>Optional</sup> <a name="startBinding" id="cdk-arch.ArrowProps.property.startBinding"></a>
-
-```typescript
-public readonly startBinding: any;
 ```
 
 - *Type:* any
@@ -276,6 +216,66 @@ public readonly strokeWidth: number;
 ```
 
 - *Type:* number
+
+---
+
+##### `endArrowhead`<sup>Optional</sup> <a name="endArrowhead" id="cdk-arch.ArrowProps.property.endArrowhead"></a>
+
+```typescript
+public readonly endArrowhead: any;
+```
+
+- *Type:* any
+
+---
+
+##### `endBinding`<sup>Optional</sup> <a name="endBinding" id="cdk-arch.ArrowProps.property.endBinding"></a>
+
+```typescript
+public readonly endBinding: any;
+```
+
+- *Type:* any
+
+---
+
+##### `lastCommittedPoint`<sup>Optional</sup> <a name="lastCommittedPoint" id="cdk-arch.ArrowProps.property.lastCommittedPoint"></a>
+
+```typescript
+public readonly lastCommittedPoint: any;
+```
+
+- *Type:* any
+
+---
+
+##### `startArrowhead`<sup>Optional</sup> <a name="startArrowhead" id="cdk-arch.ArrowProps.property.startArrowhead"></a>
+
+```typescript
+public readonly startArrowhead: any;
+```
+
+- *Type:* any
+
+---
+
+##### `startBinding`<sup>Optional</sup> <a name="startBinding" id="cdk-arch.ArrowProps.property.startBinding"></a>
+
+```typescript
+public readonly startBinding: any;
+```
+
+- *Type:* any
+
+---
+
+##### `points`<sup>Optional</sup> <a name="points" id="cdk-arch.ArrowProps.property.points"></a>
+
+```typescript
+public readonly points: number[][];
+```
+
+- *Type:* number[][]
 
 ---
 
@@ -368,6 +368,177 @@ public readonly type: string;
 
 ---
 
+### DrawnObjectProps <a name="DrawnObjectProps" id="cdk-arch.DrawnObjectProps"></a>
+
+#### Initializer <a name="Initializer" id="cdk-arch.DrawnObjectProps.Initializer"></a>
+
+```typescript
+import { DrawnObjectProps } from 'cdk-arch'
+
+const drawnObjectProps: DrawnObjectProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-arch.DrawnObjectProps.property.groupIds">groupIds</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObjectProps.property.height">height</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObjectProps.property.type">type</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObjectProps.property.width">width</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObjectProps.property.x">x</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObjectProps.property.y">y</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObjectProps.property.backgroundColor">backgroundColor</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObjectProps.property.fillStyle">fillStyle</a></code> | <code><a href="#cdk-arch.FillStyle">FillStyle</a></code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObjectProps.property.opacity">opacity</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObjectProps.property.roughness">roughness</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObjectProps.property.roundness">roundness</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObjectProps.property.strokeColor">strokeColor</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObjectProps.property.strokeStyle">strokeStyle</a></code> | <code><a href="#cdk-arch.StrokeStyle">StrokeStyle</a></code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObjectProps.property.strokeWidth">strokeWidth</a></code> | <code>number</code> | *No description.* |
+
+---
+
+##### `groupIds`<sup>Optional</sup> <a name="groupIds" id="cdk-arch.DrawnObjectProps.property.groupIds"></a>
+
+```typescript
+public readonly groupIds: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `height`<sup>Optional</sup> <a name="height" id="cdk-arch.DrawnObjectProps.property.height"></a>
+
+```typescript
+public readonly height: number;
+```
+
+- *Type:* number
+
+---
+
+##### `type`<sup>Optional</sup> <a name="type" id="cdk-arch.DrawnObjectProps.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
+
+---
+
+##### `width`<sup>Optional</sup> <a name="width" id="cdk-arch.DrawnObjectProps.property.width"></a>
+
+```typescript
+public readonly width: number;
+```
+
+- *Type:* number
+
+---
+
+##### `x`<sup>Optional</sup> <a name="x" id="cdk-arch.DrawnObjectProps.property.x"></a>
+
+```typescript
+public readonly x: number;
+```
+
+- *Type:* number
+
+---
+
+##### `y`<sup>Optional</sup> <a name="y" id="cdk-arch.DrawnObjectProps.property.y"></a>
+
+```typescript
+public readonly y: number;
+```
+
+- *Type:* number
+
+---
+
+##### `backgroundColor`<sup>Optional</sup> <a name="backgroundColor" id="cdk-arch.DrawnObjectProps.property.backgroundColor"></a>
+
+```typescript
+public readonly backgroundColor: string;
+```
+
+- *Type:* string
+
+---
+
+##### `fillStyle`<sup>Optional</sup> <a name="fillStyle" id="cdk-arch.DrawnObjectProps.property.fillStyle"></a>
+
+```typescript
+public readonly fillStyle: FillStyle;
+```
+
+- *Type:* <a href="#cdk-arch.FillStyle">FillStyle</a>
+
+---
+
+##### `opacity`<sup>Optional</sup> <a name="opacity" id="cdk-arch.DrawnObjectProps.property.opacity"></a>
+
+```typescript
+public readonly opacity: number;
+```
+
+- *Type:* number
+
+---
+
+##### `roughness`<sup>Optional</sup> <a name="roughness" id="cdk-arch.DrawnObjectProps.property.roughness"></a>
+
+```typescript
+public readonly roughness: number;
+```
+
+- *Type:* number
+
+---
+
+##### `roundness`<sup>Optional</sup> <a name="roundness" id="cdk-arch.DrawnObjectProps.property.roundness"></a>
+
+```typescript
+public readonly roundness: any;
+```
+
+- *Type:* any
+
+---
+
+##### `strokeColor`<sup>Optional</sup> <a name="strokeColor" id="cdk-arch.DrawnObjectProps.property.strokeColor"></a>
+
+```typescript
+public readonly strokeColor: string;
+```
+
+- *Type:* string
+
+---
+
+##### `strokeStyle`<sup>Optional</sup> <a name="strokeStyle" id="cdk-arch.DrawnObjectProps.property.strokeStyle"></a>
+
+```typescript
+public readonly strokeStyle: StrokeStyle;
+```
+
+- *Type:* <a href="#cdk-arch.StrokeStyle">StrokeStyle</a>
+
+---
+
+##### `strokeWidth`<sup>Optional</sup> <a name="strokeWidth" id="cdk-arch.DrawnObjectProps.property.strokeWidth"></a>
+
+```typescript
+public readonly strokeWidth: number;
+```
+
+- *Type:* number
+
+---
+
 ### EllipseProps <a name="EllipseProps" id="cdk-arch.EllipseProps"></a>
 
 #### Initializer <a name="Initializer" id="cdk-arch.EllipseProps.Initializer"></a>
@@ -389,18 +560,18 @@ const ellipseProps: EllipseProps = { ... }
 | <code><a href="#cdk-arch.EllipseProps.property.x">x</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.EllipseProps.property.y">y</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.EllipseProps.property.backgroundColor">backgroundColor</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-arch.EllipseProps.property.endArrowhead">endArrowhead</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.EllipseProps.property.endBinding">endBinding</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.EllipseProps.property.fillStyle">fillStyle</a></code> | <code><a href="#cdk-arch.FillStyle">FillStyle</a></code> | *No description.* |
-| <code><a href="#cdk-arch.EllipseProps.property.lastCommittedPoint">lastCommittedPoint</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.EllipseProps.property.opacity">opacity</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.EllipseProps.property.roughness">roughness</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.EllipseProps.property.roundness">roundness</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.EllipseProps.property.startArrowhead">startArrowhead</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.EllipseProps.property.startBinding">startBinding</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.EllipseProps.property.strokeColor">strokeColor</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-arch.EllipseProps.property.strokeStyle">strokeStyle</a></code> | <code><a href="#cdk-arch.StrokeStyle">StrokeStyle</a></code> | *No description.* |
 | <code><a href="#cdk-arch.EllipseProps.property.strokeWidth">strokeWidth</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.EllipseProps.property.endArrowhead">endArrowhead</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.EllipseProps.property.endBinding">endBinding</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.EllipseProps.property.lastCommittedPoint">lastCommittedPoint</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.EllipseProps.property.startArrowhead">startArrowhead</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.EllipseProps.property.startBinding">startBinding</a></code> | <code>any</code> | *No description.* |
 
 ---
 
@@ -474,26 +645,6 @@ public readonly backgroundColor: string;
 
 ---
 
-##### `endArrowhead`<sup>Optional</sup> <a name="endArrowhead" id="cdk-arch.EllipseProps.property.endArrowhead"></a>
-
-```typescript
-public readonly endArrowhead: any;
-```
-
-- *Type:* any
-
----
-
-##### `endBinding`<sup>Optional</sup> <a name="endBinding" id="cdk-arch.EllipseProps.property.endBinding"></a>
-
-```typescript
-public readonly endBinding: any;
-```
-
-- *Type:* any
-
----
-
 ##### `fillStyle`<sup>Optional</sup> <a name="fillStyle" id="cdk-arch.EllipseProps.property.fillStyle"></a>
 
 ```typescript
@@ -501,16 +652,6 @@ public readonly fillStyle: FillStyle;
 ```
 
 - *Type:* <a href="#cdk-arch.FillStyle">FillStyle</a>
-
----
-
-##### `lastCommittedPoint`<sup>Optional</sup> <a name="lastCommittedPoint" id="cdk-arch.EllipseProps.property.lastCommittedPoint"></a>
-
-```typescript
-public readonly lastCommittedPoint: any;
-```
-
-- *Type:* any
 
 ---
 
@@ -544,26 +685,6 @@ public readonly roundness: any;
 
 ---
 
-##### `startArrowhead`<sup>Optional</sup> <a name="startArrowhead" id="cdk-arch.EllipseProps.property.startArrowhead"></a>
-
-```typescript
-public readonly startArrowhead: any;
-```
-
-- *Type:* any
-
----
-
-##### `startBinding`<sup>Optional</sup> <a name="startBinding" id="cdk-arch.EllipseProps.property.startBinding"></a>
-
-```typescript
-public readonly startBinding: any;
-```
-
-- *Type:* any
-
----
-
 ##### `strokeColor`<sup>Optional</sup> <a name="strokeColor" id="cdk-arch.EllipseProps.property.strokeColor"></a>
 
 ```typescript
@@ -591,6 +712,56 @@ public readonly strokeWidth: number;
 ```
 
 - *Type:* number
+
+---
+
+##### `endArrowhead`<sup>Optional</sup> <a name="endArrowhead" id="cdk-arch.EllipseProps.property.endArrowhead"></a>
+
+```typescript
+public readonly endArrowhead: any;
+```
+
+- *Type:* any
+
+---
+
+##### `endBinding`<sup>Optional</sup> <a name="endBinding" id="cdk-arch.EllipseProps.property.endBinding"></a>
+
+```typescript
+public readonly endBinding: any;
+```
+
+- *Type:* any
+
+---
+
+##### `lastCommittedPoint`<sup>Optional</sup> <a name="lastCommittedPoint" id="cdk-arch.EllipseProps.property.lastCommittedPoint"></a>
+
+```typescript
+public readonly lastCommittedPoint: any;
+```
+
+- *Type:* any
+
+---
+
+##### `startArrowhead`<sup>Optional</sup> <a name="startArrowhead" id="cdk-arch.EllipseProps.property.startArrowhead"></a>
+
+```typescript
+public readonly startArrowhead: any;
+```
+
+- *Type:* any
+
+---
+
+##### `startBinding`<sup>Optional</sup> <a name="startBinding" id="cdk-arch.EllipseProps.property.startBinding"></a>
+
+```typescript
+public readonly startBinding: any;
+```
+
+- *Type:* any
 
 ---
 
@@ -677,6 +848,232 @@ public readonly y: number;
 
 ---
 
+### LineLikeProps <a name="LineLikeProps" id="cdk-arch.LineLikeProps"></a>
+
+#### Initializer <a name="Initializer" id="cdk-arch.LineLikeProps.Initializer"></a>
+
+```typescript
+import { LineLikeProps } from 'cdk-arch'
+
+const lineLikeProps: LineLikeProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-arch.LineLikeProps.property.groupIds">groupIds</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLikeProps.property.height">height</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLikeProps.property.type">type</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLikeProps.property.width">width</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLikeProps.property.x">x</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLikeProps.property.y">y</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLikeProps.property.backgroundColor">backgroundColor</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLikeProps.property.fillStyle">fillStyle</a></code> | <code><a href="#cdk-arch.FillStyle">FillStyle</a></code> | *No description.* |
+| <code><a href="#cdk-arch.LineLikeProps.property.opacity">opacity</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLikeProps.property.roughness">roughness</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLikeProps.property.roundness">roundness</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLikeProps.property.strokeColor">strokeColor</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLikeProps.property.strokeStyle">strokeStyle</a></code> | <code><a href="#cdk-arch.StrokeStyle">StrokeStyle</a></code> | *No description.* |
+| <code><a href="#cdk-arch.LineLikeProps.property.strokeWidth">strokeWidth</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLikeProps.property.endArrowhead">endArrowhead</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLikeProps.property.endBinding">endBinding</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLikeProps.property.lastCommittedPoint">lastCommittedPoint</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLikeProps.property.startArrowhead">startArrowhead</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLikeProps.property.startBinding">startBinding</a></code> | <code>any</code> | *No description.* |
+
+---
+
+##### `groupIds`<sup>Optional</sup> <a name="groupIds" id="cdk-arch.LineLikeProps.property.groupIds"></a>
+
+```typescript
+public readonly groupIds: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `height`<sup>Optional</sup> <a name="height" id="cdk-arch.LineLikeProps.property.height"></a>
+
+```typescript
+public readonly height: number;
+```
+
+- *Type:* number
+
+---
+
+##### `type`<sup>Optional</sup> <a name="type" id="cdk-arch.LineLikeProps.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
+
+---
+
+##### `width`<sup>Optional</sup> <a name="width" id="cdk-arch.LineLikeProps.property.width"></a>
+
+```typescript
+public readonly width: number;
+```
+
+- *Type:* number
+
+---
+
+##### `x`<sup>Optional</sup> <a name="x" id="cdk-arch.LineLikeProps.property.x"></a>
+
+```typescript
+public readonly x: number;
+```
+
+- *Type:* number
+
+---
+
+##### `y`<sup>Optional</sup> <a name="y" id="cdk-arch.LineLikeProps.property.y"></a>
+
+```typescript
+public readonly y: number;
+```
+
+- *Type:* number
+
+---
+
+##### `backgroundColor`<sup>Optional</sup> <a name="backgroundColor" id="cdk-arch.LineLikeProps.property.backgroundColor"></a>
+
+```typescript
+public readonly backgroundColor: string;
+```
+
+- *Type:* string
+
+---
+
+##### `fillStyle`<sup>Optional</sup> <a name="fillStyle" id="cdk-arch.LineLikeProps.property.fillStyle"></a>
+
+```typescript
+public readonly fillStyle: FillStyle;
+```
+
+- *Type:* <a href="#cdk-arch.FillStyle">FillStyle</a>
+
+---
+
+##### `opacity`<sup>Optional</sup> <a name="opacity" id="cdk-arch.LineLikeProps.property.opacity"></a>
+
+```typescript
+public readonly opacity: number;
+```
+
+- *Type:* number
+
+---
+
+##### `roughness`<sup>Optional</sup> <a name="roughness" id="cdk-arch.LineLikeProps.property.roughness"></a>
+
+```typescript
+public readonly roughness: number;
+```
+
+- *Type:* number
+
+---
+
+##### `roundness`<sup>Optional</sup> <a name="roundness" id="cdk-arch.LineLikeProps.property.roundness"></a>
+
+```typescript
+public readonly roundness: any;
+```
+
+- *Type:* any
+
+---
+
+##### `strokeColor`<sup>Optional</sup> <a name="strokeColor" id="cdk-arch.LineLikeProps.property.strokeColor"></a>
+
+```typescript
+public readonly strokeColor: string;
+```
+
+- *Type:* string
+
+---
+
+##### `strokeStyle`<sup>Optional</sup> <a name="strokeStyle" id="cdk-arch.LineLikeProps.property.strokeStyle"></a>
+
+```typescript
+public readonly strokeStyle: StrokeStyle;
+```
+
+- *Type:* <a href="#cdk-arch.StrokeStyle">StrokeStyle</a>
+
+---
+
+##### `strokeWidth`<sup>Optional</sup> <a name="strokeWidth" id="cdk-arch.LineLikeProps.property.strokeWidth"></a>
+
+```typescript
+public readonly strokeWidth: number;
+```
+
+- *Type:* number
+
+---
+
+##### `endArrowhead`<sup>Optional</sup> <a name="endArrowhead" id="cdk-arch.LineLikeProps.property.endArrowhead"></a>
+
+```typescript
+public readonly endArrowhead: any;
+```
+
+- *Type:* any
+
+---
+
+##### `endBinding`<sup>Optional</sup> <a name="endBinding" id="cdk-arch.LineLikeProps.property.endBinding"></a>
+
+```typescript
+public readonly endBinding: any;
+```
+
+- *Type:* any
+
+---
+
+##### `lastCommittedPoint`<sup>Optional</sup> <a name="lastCommittedPoint" id="cdk-arch.LineLikeProps.property.lastCommittedPoint"></a>
+
+```typescript
+public readonly lastCommittedPoint: any;
+```
+
+- *Type:* any
+
+---
+
+##### `startArrowhead`<sup>Optional</sup> <a name="startArrowhead" id="cdk-arch.LineLikeProps.property.startArrowhead"></a>
+
+```typescript
+public readonly startArrowhead: any;
+```
+
+- *Type:* any
+
+---
+
+##### `startBinding`<sup>Optional</sup> <a name="startBinding" id="cdk-arch.LineLikeProps.property.startBinding"></a>
+
+```typescript
+public readonly startBinding: any;
+```
+
+- *Type:* any
+
+---
+
 ### LineProps <a name="LineProps" id="cdk-arch.LineProps"></a>
 
 #### Initializer <a name="Initializer" id="cdk-arch.LineProps.Initializer"></a>
@@ -698,19 +1095,19 @@ const lineProps: LineProps = { ... }
 | <code><a href="#cdk-arch.LineProps.property.x">x</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.LineProps.property.y">y</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.LineProps.property.backgroundColor">backgroundColor</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-arch.LineProps.property.endArrowhead">endArrowhead</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.LineProps.property.endBinding">endBinding</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.LineProps.property.fillStyle">fillStyle</a></code> | <code><a href="#cdk-arch.FillStyle">FillStyle</a></code> | *No description.* |
-| <code><a href="#cdk-arch.LineProps.property.lastCommittedPoint">lastCommittedPoint</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.LineProps.property.opacity">opacity</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-arch.LineProps.property.points">points</a></code> | <code>number[][]</code> | *No description.* |
 | <code><a href="#cdk-arch.LineProps.property.roughness">roughness</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.LineProps.property.roundness">roundness</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.LineProps.property.startArrowhead">startArrowhead</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.LineProps.property.startBinding">startBinding</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.LineProps.property.strokeColor">strokeColor</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-arch.LineProps.property.strokeStyle">strokeStyle</a></code> | <code><a href="#cdk-arch.StrokeStyle">StrokeStyle</a></code> | *No description.* |
 | <code><a href="#cdk-arch.LineProps.property.strokeWidth">strokeWidth</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.LineProps.property.endArrowhead">endArrowhead</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.LineProps.property.endBinding">endBinding</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.LineProps.property.lastCommittedPoint">lastCommittedPoint</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.LineProps.property.startArrowhead">startArrowhead</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.LineProps.property.startBinding">startBinding</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.LineProps.property.points">points</a></code> | <code>number[][]</code> | *No description.* |
 
 ---
 
@@ -784,26 +1181,6 @@ public readonly backgroundColor: string;
 
 ---
 
-##### `endArrowhead`<sup>Optional</sup> <a name="endArrowhead" id="cdk-arch.LineProps.property.endArrowhead"></a>
-
-```typescript
-public readonly endArrowhead: any;
-```
-
-- *Type:* any
-
----
-
-##### `endBinding`<sup>Optional</sup> <a name="endBinding" id="cdk-arch.LineProps.property.endBinding"></a>
-
-```typescript
-public readonly endBinding: any;
-```
-
-- *Type:* any
-
----
-
 ##### `fillStyle`<sup>Optional</sup> <a name="fillStyle" id="cdk-arch.LineProps.property.fillStyle"></a>
 
 ```typescript
@@ -814,16 +1191,6 @@ public readonly fillStyle: FillStyle;
 
 ---
 
-##### `lastCommittedPoint`<sup>Optional</sup> <a name="lastCommittedPoint" id="cdk-arch.LineProps.property.lastCommittedPoint"></a>
-
-```typescript
-public readonly lastCommittedPoint: any;
-```
-
-- *Type:* any
-
----
-
 ##### `opacity`<sup>Optional</sup> <a name="opacity" id="cdk-arch.LineProps.property.opacity"></a>
 
 ```typescript
@@ -831,16 +1198,6 @@ public readonly opacity: number;
 ```
 
 - *Type:* number
-
----
-
-##### `points`<sup>Optional</sup> <a name="points" id="cdk-arch.LineProps.property.points"></a>
-
-```typescript
-public readonly points: number[][];
-```
-
-- *Type:* number[][]
 
 ---
 
@@ -858,26 +1215,6 @@ public readonly roughness: number;
 
 ```typescript
 public readonly roundness: any;
-```
-
-- *Type:* any
-
----
-
-##### `startArrowhead`<sup>Optional</sup> <a name="startArrowhead" id="cdk-arch.LineProps.property.startArrowhead"></a>
-
-```typescript
-public readonly startArrowhead: any;
-```
-
-- *Type:* any
-
----
-
-##### `startBinding`<sup>Optional</sup> <a name="startBinding" id="cdk-arch.LineProps.property.startBinding"></a>
-
-```typescript
-public readonly startBinding: any;
 ```
 
 - *Type:* any
@@ -914,6 +1251,66 @@ public readonly strokeWidth: number;
 
 ---
 
+##### `endArrowhead`<sup>Optional</sup> <a name="endArrowhead" id="cdk-arch.LineProps.property.endArrowhead"></a>
+
+```typescript
+public readonly endArrowhead: any;
+```
+
+- *Type:* any
+
+---
+
+##### `endBinding`<sup>Optional</sup> <a name="endBinding" id="cdk-arch.LineProps.property.endBinding"></a>
+
+```typescript
+public readonly endBinding: any;
+```
+
+- *Type:* any
+
+---
+
+##### `lastCommittedPoint`<sup>Optional</sup> <a name="lastCommittedPoint" id="cdk-arch.LineProps.property.lastCommittedPoint"></a>
+
+```typescript
+public readonly lastCommittedPoint: any;
+```
+
+- *Type:* any
+
+---
+
+##### `startArrowhead`<sup>Optional</sup> <a name="startArrowhead" id="cdk-arch.LineProps.property.startArrowhead"></a>
+
+```typescript
+public readonly startArrowhead: any;
+```
+
+- *Type:* any
+
+---
+
+##### `startBinding`<sup>Optional</sup> <a name="startBinding" id="cdk-arch.LineProps.property.startBinding"></a>
+
+```typescript
+public readonly startBinding: any;
+```
+
+- *Type:* any
+
+---
+
+##### `points`<sup>Optional</sup> <a name="points" id="cdk-arch.LineProps.property.points"></a>
+
+```typescript
+public readonly points: number[][];
+```
+
+- *Type:* number[][]
+
+---
+
 ### RectangleProps <a name="RectangleProps" id="cdk-arch.RectangleProps"></a>
 
 #### Initializer <a name="Initializer" id="cdk-arch.RectangleProps.Initializer"></a>
@@ -935,18 +1332,18 @@ const rectangleProps: RectangleProps = { ... }
 | <code><a href="#cdk-arch.RectangleProps.property.x">x</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.RectangleProps.property.y">y</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.RectangleProps.property.backgroundColor">backgroundColor</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-arch.RectangleProps.property.endArrowhead">endArrowhead</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.RectangleProps.property.endBinding">endBinding</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.RectangleProps.property.fillStyle">fillStyle</a></code> | <code><a href="#cdk-arch.FillStyle">FillStyle</a></code> | *No description.* |
-| <code><a href="#cdk-arch.RectangleProps.property.lastCommittedPoint">lastCommittedPoint</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.RectangleProps.property.opacity">opacity</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.RectangleProps.property.roughness">roughness</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.RectangleProps.property.roundness">roundness</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.RectangleProps.property.startArrowhead">startArrowhead</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.RectangleProps.property.startBinding">startBinding</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.RectangleProps.property.strokeColor">strokeColor</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-arch.RectangleProps.property.strokeStyle">strokeStyle</a></code> | <code><a href="#cdk-arch.StrokeStyle">StrokeStyle</a></code> | *No description.* |
 | <code><a href="#cdk-arch.RectangleProps.property.strokeWidth">strokeWidth</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.RectangleProps.property.endArrowhead">endArrowhead</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.RectangleProps.property.endBinding">endBinding</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.RectangleProps.property.lastCommittedPoint">lastCommittedPoint</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.RectangleProps.property.startArrowhead">startArrowhead</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.RectangleProps.property.startBinding">startBinding</a></code> | <code>any</code> | *No description.* |
 
 ---
 
@@ -1020,26 +1417,6 @@ public readonly backgroundColor: string;
 
 ---
 
-##### `endArrowhead`<sup>Optional</sup> <a name="endArrowhead" id="cdk-arch.RectangleProps.property.endArrowhead"></a>
-
-```typescript
-public readonly endArrowhead: any;
-```
-
-- *Type:* any
-
----
-
-##### `endBinding`<sup>Optional</sup> <a name="endBinding" id="cdk-arch.RectangleProps.property.endBinding"></a>
-
-```typescript
-public readonly endBinding: any;
-```
-
-- *Type:* any
-
----
-
 ##### `fillStyle`<sup>Optional</sup> <a name="fillStyle" id="cdk-arch.RectangleProps.property.fillStyle"></a>
 
 ```typescript
@@ -1047,16 +1424,6 @@ public readonly fillStyle: FillStyle;
 ```
 
 - *Type:* <a href="#cdk-arch.FillStyle">FillStyle</a>
-
----
-
-##### `lastCommittedPoint`<sup>Optional</sup> <a name="lastCommittedPoint" id="cdk-arch.RectangleProps.property.lastCommittedPoint"></a>
-
-```typescript
-public readonly lastCommittedPoint: any;
-```
-
-- *Type:* any
 
 ---
 
@@ -1090,26 +1457,6 @@ public readonly roundness: any;
 
 ---
 
-##### `startArrowhead`<sup>Optional</sup> <a name="startArrowhead" id="cdk-arch.RectangleProps.property.startArrowhead"></a>
-
-```typescript
-public readonly startArrowhead: any;
-```
-
-- *Type:* any
-
----
-
-##### `startBinding`<sup>Optional</sup> <a name="startBinding" id="cdk-arch.RectangleProps.property.startBinding"></a>
-
-```typescript
-public readonly startBinding: any;
-```
-
-- *Type:* any
-
----
-
 ##### `strokeColor`<sup>Optional</sup> <a name="strokeColor" id="cdk-arch.RectangleProps.property.strokeColor"></a>
 
 ```typescript
@@ -1137,6 +1484,56 @@ public readonly strokeWidth: number;
 ```
 
 - *Type:* number
+
+---
+
+##### `endArrowhead`<sup>Optional</sup> <a name="endArrowhead" id="cdk-arch.RectangleProps.property.endArrowhead"></a>
+
+```typescript
+public readonly endArrowhead: any;
+```
+
+- *Type:* any
+
+---
+
+##### `endBinding`<sup>Optional</sup> <a name="endBinding" id="cdk-arch.RectangleProps.property.endBinding"></a>
+
+```typescript
+public readonly endBinding: any;
+```
+
+- *Type:* any
+
+---
+
+##### `lastCommittedPoint`<sup>Optional</sup> <a name="lastCommittedPoint" id="cdk-arch.RectangleProps.property.lastCommittedPoint"></a>
+
+```typescript
+public readonly lastCommittedPoint: any;
+```
+
+- *Type:* any
+
+---
+
+##### `startArrowhead`<sup>Optional</sup> <a name="startArrowhead" id="cdk-arch.RectangleProps.property.startArrowhead"></a>
+
+```typescript
+public readonly startArrowhead: any;
+```
+
+- *Type:* any
+
+---
+
+##### `startBinding`<sup>Optional</sup> <a name="startBinding" id="cdk-arch.RectangleProps.property.startBinding"></a>
+
+```typescript
+public readonly startBinding: any;
+```
+
+- *Type:* any
 
 ---
 
@@ -1188,24 +1585,21 @@ const textProps: TextProps = { ... }
 | <code><a href="#cdk-arch.TextProps.property.width">width</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.TextProps.property.x">x</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.TextProps.property.y">y</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-arch.TextProps.property.originalText">originalText</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-arch.TextProps.property.backgroundColor">backgroundColor</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-arch.TextProps.property.baseline">baseline</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-arch.TextProps.property.containerId">containerId</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.TextProps.property.endArrowhead">endArrowhead</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.TextProps.property.endBinding">endBinding</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.TextProps.property.fillStyle">fillStyle</a></code> | <code><a href="#cdk-arch.FillStyle">FillStyle</a></code> | *No description.* |
-| <code><a href="#cdk-arch.TextProps.property.fontFamily">fontFamily</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-arch.TextProps.property.lastCommittedPoint">lastCommittedPoint</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.TextProps.property.lineHeight">lineHeight</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.TextProps.property.opacity">opacity</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.TextProps.property.roughness">roughness</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.TextProps.property.roundness">roundness</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.TextProps.property.startArrowhead">startArrowhead</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.TextProps.property.startBinding">startBinding</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.TextProps.property.strokeColor">strokeColor</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-arch.TextProps.property.strokeStyle">strokeStyle</a></code> | <code><a href="#cdk-arch.StrokeStyle">StrokeStyle</a></code> | *No description.* |
 | <code><a href="#cdk-arch.TextProps.property.strokeWidth">strokeWidth</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.TextProps.property.text">text</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.TextProps.property.baseline">baseline</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.TextProps.property.containerId">containerId</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.TextProps.property.fontFamily">fontFamily</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.TextProps.property.fontSize">fontSize</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.TextProps.property.lineHeight">lineHeight</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.TextProps.property.originalText">originalText</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-arch.TextProps.property.textAlign">textAlign</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-arch.TextProps.property.verticalAlign">verticalAlign</a></code> | <code>string</code> | *No description.* |
 
@@ -1271,16 +1665,6 @@ public readonly y: number;
 
 ---
 
-##### `originalText`<sup>Required</sup> <a name="originalText" id="cdk-arch.TextProps.property.originalText"></a>
-
-```typescript
-public readonly originalText: string;
-```
-
-- *Type:* string
-
----
-
 ##### `backgroundColor`<sup>Optional</sup> <a name="backgroundColor" id="cdk-arch.TextProps.property.backgroundColor"></a>
 
 ```typescript
@@ -1291,46 +1675,6 @@ public readonly backgroundColor: string;
 
 ---
 
-##### `baseline`<sup>Optional</sup> <a name="baseline" id="cdk-arch.TextProps.property.baseline"></a>
-
-```typescript
-public readonly baseline: number;
-```
-
-- *Type:* number
-
----
-
-##### `containerId`<sup>Optional</sup> <a name="containerId" id="cdk-arch.TextProps.property.containerId"></a>
-
-```typescript
-public readonly containerId: any;
-```
-
-- *Type:* any
-
----
-
-##### `endArrowhead`<sup>Optional</sup> <a name="endArrowhead" id="cdk-arch.TextProps.property.endArrowhead"></a>
-
-```typescript
-public readonly endArrowhead: any;
-```
-
-- *Type:* any
-
----
-
-##### `endBinding`<sup>Optional</sup> <a name="endBinding" id="cdk-arch.TextProps.property.endBinding"></a>
-
-```typescript
-public readonly endBinding: any;
-```
-
-- *Type:* any
-
----
-
 ##### `fillStyle`<sup>Optional</sup> <a name="fillStyle" id="cdk-arch.TextProps.property.fillStyle"></a>
 
 ```typescript
@@ -1338,36 +1682,6 @@ public readonly fillStyle: FillStyle;
 ```
 
 - *Type:* <a href="#cdk-arch.FillStyle">FillStyle</a>
-
----
-
-##### `fontFamily`<sup>Optional</sup> <a name="fontFamily" id="cdk-arch.TextProps.property.fontFamily"></a>
-
-```typescript
-public readonly fontFamily: number;
-```
-
-- *Type:* number
-
----
-
-##### `lastCommittedPoint`<sup>Optional</sup> <a name="lastCommittedPoint" id="cdk-arch.TextProps.property.lastCommittedPoint"></a>
-
-```typescript
-public readonly lastCommittedPoint: any;
-```
-
-- *Type:* any
-
----
-
-##### `lineHeight`<sup>Optional</sup> <a name="lineHeight" id="cdk-arch.TextProps.property.lineHeight"></a>
-
-```typescript
-public readonly lineHeight: number;
-```
-
-- *Type:* number
 
 ---
 
@@ -1395,26 +1709,6 @@ public readonly roughness: number;
 
 ```typescript
 public readonly roundness: any;
-```
-
-- *Type:* any
-
----
-
-##### `startArrowhead`<sup>Optional</sup> <a name="startArrowhead" id="cdk-arch.TextProps.property.startArrowhead"></a>
-
-```typescript
-public readonly startArrowhead: any;
-```
-
-- *Type:* any
-
----
-
-##### `startBinding`<sup>Optional</sup> <a name="startBinding" id="cdk-arch.TextProps.property.startBinding"></a>
-
-```typescript
-public readonly startBinding: any;
 ```
 
 - *Type:* any
@@ -1451,6 +1745,76 @@ public readonly strokeWidth: number;
 
 ---
 
+##### `text`<sup>Required</sup> <a name="text" id="cdk-arch.TextProps.property.text"></a>
+
+```typescript
+public readonly text: string;
+```
+
+- *Type:* string
+
+---
+
+##### `baseline`<sup>Optional</sup> <a name="baseline" id="cdk-arch.TextProps.property.baseline"></a>
+
+```typescript
+public readonly baseline: number;
+```
+
+- *Type:* number
+
+---
+
+##### `containerId`<sup>Optional</sup> <a name="containerId" id="cdk-arch.TextProps.property.containerId"></a>
+
+```typescript
+public readonly containerId: any;
+```
+
+- *Type:* any
+
+---
+
+##### `fontFamily`<sup>Optional</sup> <a name="fontFamily" id="cdk-arch.TextProps.property.fontFamily"></a>
+
+```typescript
+public readonly fontFamily: number;
+```
+
+- *Type:* number
+
+---
+
+##### `fontSize`<sup>Optional</sup> <a name="fontSize" id="cdk-arch.TextProps.property.fontSize"></a>
+
+```typescript
+public readonly fontSize: number;
+```
+
+- *Type:* number
+
+---
+
+##### `lineHeight`<sup>Optional</sup> <a name="lineHeight" id="cdk-arch.TextProps.property.lineHeight"></a>
+
+```typescript
+public readonly lineHeight: number;
+```
+
+- *Type:* number
+
+---
+
+##### `originalText`<sup>Optional</sup> <a name="originalText" id="cdk-arch.TextProps.property.originalText"></a>
+
+```typescript
+public readonly originalText: string;
+```
+
+- *Type:* string
+
+---
+
 ##### `textAlign`<sup>Optional</sup> <a name="textAlign" id="cdk-arch.TextProps.property.textAlign"></a>
 
 ```typescript
@@ -1480,18 +1844,18 @@ public readonly verticalAlign: string;
 ```typescript
 import { Arrow } from 'cdk-arch'
 
-new Arrow(args: LineProps)
+new Arrow(args: ArrowProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk-arch.Arrow.Initializer.parameter.args">args</a></code> | <code><a href="#cdk-arch.LineProps">LineProps</a></code> | *No description.* |
+| <code><a href="#cdk-arch.Arrow.Initializer.parameter.args">args</a></code> | <code><a href="#cdk-arch.ArrowProps">ArrowProps</a></code> | *No description.* |
 
 ---
 
 ##### `args`<sup>Required</sup> <a name="args" id="cdk-arch.Arrow.Initializer.parameter.args"></a>
 
-- *Type:* <a href="#cdk-arch.LineProps">LineProps</a>
+- *Type:* <a href="#cdk-arch.ArrowProps">ArrowProps</a>
 
 ---
 
@@ -1522,35 +1886,35 @@ public addBoundElement(element: ExcaliDrawPrimitive): void
 | --- | --- | --- |
 | <code><a href="#cdk-arch.Arrow.property.angle">angle</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Arrow.property.boundElements">boundElements</a></code> | <code><a href="#cdk-arch.BoundElement">BoundElement</a>[]</code> | *No description.* |
-| <code><a href="#cdk-arch.Arrow.property.frameId">frameId</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.Arrow.property.frameId">frameId</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Arrow.property.groupIds">groupIds</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#cdk-arch.Arrow.property.height">height</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Arrow.property.id">id</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-arch.Arrow.property.isDeleted">isDeleted</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#cdk-arch.Arrow.property.link">link</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.Arrow.property.link">link</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Arrow.property.locked">locked</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-arch.Arrow.property.seed">seed</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Arrow.property.type">type</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-arch.Arrow.property.updated">updated</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-arch.Arrow.property.updated">updated</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Arrow.property.version">version</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Arrow.property.versionNonce">versionNonce</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Arrow.property.width">width</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Arrow.property.x">x</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Arrow.property.y">y</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Arrow.property.backgroundColor">backgroundColor</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-arch.Arrow.property.endArrowhead">endArrowhead</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.Arrow.property.endBinding">endBinding</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Arrow.property.fillStyle">fillStyle</a></code> | <code><a href="#cdk-arch.FillStyle">FillStyle</a></code> | *No description.* |
-| <code><a href="#cdk-arch.Arrow.property.lastCommittedPoint">lastCommittedPoint</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Arrow.property.opacity">opacity</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-arch.Arrow.property.points">points</a></code> | <code>number[][]</code> | *No description.* |
 | <code><a href="#cdk-arch.Arrow.property.roughness">roughness</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Arrow.property.roundness">roundness</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.Arrow.property.startArrowhead">startArrowhead</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.Arrow.property.startBinding">startBinding</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Arrow.property.strokeColor">strokeColor</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-arch.Arrow.property.strokeStyle">strokeStyle</a></code> | <code><a href="#cdk-arch.StrokeStyle">StrokeStyle</a></code> | *No description.* |
 | <code><a href="#cdk-arch.Arrow.property.strokeWidth">strokeWidth</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.Arrow.property.endArrowhead">endArrowhead</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.Arrow.property.endBinding">endBinding</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.Arrow.property.lastCommittedPoint">lastCommittedPoint</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.Arrow.property.startArrowhead">startArrowhead</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.Arrow.property.startBinding">startBinding</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.Arrow.property.points">points</a></code> | <code>number[][]</code> | *No description.* |
 
 ---
 
@@ -1577,10 +1941,10 @@ public readonly boundElements: BoundElement[];
 ##### `frameId`<sup>Required</sup> <a name="frameId" id="cdk-arch.Arrow.property.frameId"></a>
 
 ```typescript
-public readonly frameId: number;
+public readonly frameId: any;
 ```
 
-- *Type:* number
+- *Type:* any
 
 ---
 
@@ -1627,10 +1991,10 @@ public readonly isDeleted: boolean;
 ##### `link`<sup>Required</sup> <a name="link" id="cdk-arch.Arrow.property.link"></a>
 
 ```typescript
-public readonly link: string;
+public readonly link: any;
 ```
 
-- *Type:* string
+- *Type:* any
 
 ---
 
@@ -1667,10 +2031,10 @@ public readonly type: string;
 ##### `updated`<sup>Required</sup> <a name="updated" id="cdk-arch.Arrow.property.updated"></a>
 
 ```typescript
-public readonly updated: boolean;
+public readonly updated: number;
 ```
 
-- *Type:* boolean
+- *Type:* number
 
 ---
 
@@ -1734,26 +2098,6 @@ public readonly backgroundColor: string;
 
 ---
 
-##### `endArrowhead`<sup>Required</sup> <a name="endArrowhead" id="cdk-arch.Arrow.property.endArrowhead"></a>
-
-```typescript
-public readonly endArrowhead: any;
-```
-
-- *Type:* any
-
----
-
-##### `endBinding`<sup>Required</sup> <a name="endBinding" id="cdk-arch.Arrow.property.endBinding"></a>
-
-```typescript
-public readonly endBinding: any;
-```
-
-- *Type:* any
-
----
-
 ##### `fillStyle`<sup>Required</sup> <a name="fillStyle" id="cdk-arch.Arrow.property.fillStyle"></a>
 
 ```typescript
@@ -1764,16 +2108,6 @@ public readonly fillStyle: FillStyle;
 
 ---
 
-##### `lastCommittedPoint`<sup>Required</sup> <a name="lastCommittedPoint" id="cdk-arch.Arrow.property.lastCommittedPoint"></a>
-
-```typescript
-public readonly lastCommittedPoint: any;
-```
-
-- *Type:* any
-
----
-
 ##### `opacity`<sup>Required</sup> <a name="opacity" id="cdk-arch.Arrow.property.opacity"></a>
 
 ```typescript
@@ -1781,16 +2115,6 @@ public readonly opacity: number;
 ```
 
 - *Type:* number
-
----
-
-##### `points`<sup>Required</sup> <a name="points" id="cdk-arch.Arrow.property.points"></a>
-
-```typescript
-public readonly points: number[][];
-```
-
-- *Type:* number[][]
 
 ---
 
@@ -1808,26 +2132,6 @@ public readonly roughness: number;
 
 ```typescript
 public readonly roundness: any;
-```
-
-- *Type:* any
-
----
-
-##### `startArrowhead`<sup>Required</sup> <a name="startArrowhead" id="cdk-arch.Arrow.property.startArrowhead"></a>
-
-```typescript
-public readonly startArrowhead: any;
-```
-
-- *Type:* any
-
----
-
-##### `startBinding`<sup>Required</sup> <a name="startBinding" id="cdk-arch.Arrow.property.startBinding"></a>
-
-```typescript
-public readonly startBinding: any;
 ```
 
 - *Type:* any
@@ -1864,6 +2168,392 @@ public readonly strokeWidth: number;
 
 ---
 
+##### `endArrowhead`<sup>Required</sup> <a name="endArrowhead" id="cdk-arch.Arrow.property.endArrowhead"></a>
+
+```typescript
+public readonly endArrowhead: any;
+```
+
+- *Type:* any
+
+---
+
+##### `endBinding`<sup>Required</sup> <a name="endBinding" id="cdk-arch.Arrow.property.endBinding"></a>
+
+```typescript
+public readonly endBinding: any;
+```
+
+- *Type:* any
+
+---
+
+##### `lastCommittedPoint`<sup>Required</sup> <a name="lastCommittedPoint" id="cdk-arch.Arrow.property.lastCommittedPoint"></a>
+
+```typescript
+public readonly lastCommittedPoint: any;
+```
+
+- *Type:* any
+
+---
+
+##### `startArrowhead`<sup>Required</sup> <a name="startArrowhead" id="cdk-arch.Arrow.property.startArrowhead"></a>
+
+```typescript
+public readonly startArrowhead: any;
+```
+
+- *Type:* any
+
+---
+
+##### `startBinding`<sup>Required</sup> <a name="startBinding" id="cdk-arch.Arrow.property.startBinding"></a>
+
+```typescript
+public readonly startBinding: any;
+```
+
+- *Type:* any
+
+---
+
+##### `points`<sup>Required</sup> <a name="points" id="cdk-arch.Arrow.property.points"></a>
+
+```typescript
+public readonly points: number[][];
+```
+
+- *Type:* number[][]
+
+---
+
+
+### DrawnObject <a name="DrawnObject" id="cdk-arch.DrawnObject"></a>
+
+#### Initializers <a name="Initializers" id="cdk-arch.DrawnObject.Initializer"></a>
+
+```typescript
+import { DrawnObject } from 'cdk-arch'
+
+new DrawnObject(args: DrawnObjectProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-arch.DrawnObject.Initializer.parameter.args">args</a></code> | <code><a href="#cdk-arch.DrawnObjectProps">DrawnObjectProps</a></code> | *No description.* |
+
+---
+
+##### `args`<sup>Required</sup> <a name="args" id="cdk-arch.DrawnObject.Initializer.parameter.args"></a>
+
+- *Type:* <a href="#cdk-arch.DrawnObjectProps">DrawnObjectProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-arch.DrawnObject.addBoundElement">addBoundElement</a></code> | *No description.* |
+
+---
+
+##### `addBoundElement` <a name="addBoundElement" id="cdk-arch.DrawnObject.addBoundElement"></a>
+
+```typescript
+public addBoundElement(element: ExcaliDrawPrimitive): void
+```
+
+###### `element`<sup>Required</sup> <a name="element" id="cdk-arch.DrawnObject.addBoundElement.parameter.element"></a>
+
+- *Type:* <a href="#cdk-arch.ExcaliDrawPrimitive">ExcaliDrawPrimitive</a>
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-arch.DrawnObject.property.angle">angle</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.boundElements">boundElements</a></code> | <code><a href="#cdk-arch.BoundElement">BoundElement</a>[]</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.frameId">frameId</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.groupIds">groupIds</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.height">height</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.isDeleted">isDeleted</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.link">link</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.locked">locked</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.seed">seed</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.type">type</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.updated">updated</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.version">version</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.versionNonce">versionNonce</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.width">width</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.x">x</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.y">y</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.backgroundColor">backgroundColor</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.fillStyle">fillStyle</a></code> | <code><a href="#cdk-arch.FillStyle">FillStyle</a></code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.opacity">opacity</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.roughness">roughness</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.roundness">roundness</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.strokeColor">strokeColor</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.strokeStyle">strokeStyle</a></code> | <code><a href="#cdk-arch.StrokeStyle">StrokeStyle</a></code> | *No description.* |
+| <code><a href="#cdk-arch.DrawnObject.property.strokeWidth">strokeWidth</a></code> | <code>number</code> | *No description.* |
+
+---
+
+##### `angle`<sup>Required</sup> <a name="angle" id="cdk-arch.DrawnObject.property.angle"></a>
+
+```typescript
+public readonly angle: number;
+```
+
+- *Type:* number
+
+---
+
+##### `boundElements`<sup>Required</sup> <a name="boundElements" id="cdk-arch.DrawnObject.property.boundElements"></a>
+
+```typescript
+public readonly boundElements: BoundElement[];
+```
+
+- *Type:* <a href="#cdk-arch.BoundElement">BoundElement</a>[]
+
+---
+
+##### `frameId`<sup>Required</sup> <a name="frameId" id="cdk-arch.DrawnObject.property.frameId"></a>
+
+```typescript
+public readonly frameId: any;
+```
+
+- *Type:* any
+
+---
+
+##### `groupIds`<sup>Required</sup> <a name="groupIds" id="cdk-arch.DrawnObject.property.groupIds"></a>
+
+```typescript
+public readonly groupIds: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `height`<sup>Required</sup> <a name="height" id="cdk-arch.DrawnObject.property.height"></a>
+
+```typescript
+public readonly height: number;
+```
+
+- *Type:* number
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdk-arch.DrawnObject.property.id"></a>
+
+```typescript
+public readonly id: string;
+```
+
+- *Type:* string
+
+---
+
+##### `isDeleted`<sup>Required</sup> <a name="isDeleted" id="cdk-arch.DrawnObject.property.isDeleted"></a>
+
+```typescript
+public readonly isDeleted: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `link`<sup>Required</sup> <a name="link" id="cdk-arch.DrawnObject.property.link"></a>
+
+```typescript
+public readonly link: any;
+```
+
+- *Type:* any
+
+---
+
+##### `locked`<sup>Required</sup> <a name="locked" id="cdk-arch.DrawnObject.property.locked"></a>
+
+```typescript
+public readonly locked: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `seed`<sup>Required</sup> <a name="seed" id="cdk-arch.DrawnObject.property.seed"></a>
+
+```typescript
+public readonly seed: number;
+```
+
+- *Type:* number
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="cdk-arch.DrawnObject.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
+
+---
+
+##### `updated`<sup>Required</sup> <a name="updated" id="cdk-arch.DrawnObject.property.updated"></a>
+
+```typescript
+public readonly updated: number;
+```
+
+- *Type:* number
+
+---
+
+##### `version`<sup>Required</sup> <a name="version" id="cdk-arch.DrawnObject.property.version"></a>
+
+```typescript
+public readonly version: number;
+```
+
+- *Type:* number
+
+---
+
+##### `versionNonce`<sup>Required</sup> <a name="versionNonce" id="cdk-arch.DrawnObject.property.versionNonce"></a>
+
+```typescript
+public readonly versionNonce: number;
+```
+
+- *Type:* number
+
+---
+
+##### `width`<sup>Required</sup> <a name="width" id="cdk-arch.DrawnObject.property.width"></a>
+
+```typescript
+public readonly width: number;
+```
+
+- *Type:* number
+
+---
+
+##### `x`<sup>Required</sup> <a name="x" id="cdk-arch.DrawnObject.property.x"></a>
+
+```typescript
+public readonly x: number;
+```
+
+- *Type:* number
+
+---
+
+##### `y`<sup>Required</sup> <a name="y" id="cdk-arch.DrawnObject.property.y"></a>
+
+```typescript
+public readonly y: number;
+```
+
+- *Type:* number
+
+---
+
+##### `backgroundColor`<sup>Required</sup> <a name="backgroundColor" id="cdk-arch.DrawnObject.property.backgroundColor"></a>
+
+```typescript
+public readonly backgroundColor: string;
+```
+
+- *Type:* string
+
+---
+
+##### `fillStyle`<sup>Required</sup> <a name="fillStyle" id="cdk-arch.DrawnObject.property.fillStyle"></a>
+
+```typescript
+public readonly fillStyle: FillStyle;
+```
+
+- *Type:* <a href="#cdk-arch.FillStyle">FillStyle</a>
+
+---
+
+##### `opacity`<sup>Required</sup> <a name="opacity" id="cdk-arch.DrawnObject.property.opacity"></a>
+
+```typescript
+public readonly opacity: number;
+```
+
+- *Type:* number
+
+---
+
+##### `roughness`<sup>Required</sup> <a name="roughness" id="cdk-arch.DrawnObject.property.roughness"></a>
+
+```typescript
+public readonly roughness: number;
+```
+
+- *Type:* number
+
+---
+
+##### `roundness`<sup>Required</sup> <a name="roundness" id="cdk-arch.DrawnObject.property.roundness"></a>
+
+```typescript
+public readonly roundness: any;
+```
+
+- *Type:* any
+
+---
+
+##### `strokeColor`<sup>Required</sup> <a name="strokeColor" id="cdk-arch.DrawnObject.property.strokeColor"></a>
+
+```typescript
+public readonly strokeColor: string;
+```
+
+- *Type:* string
+
+---
+
+##### `strokeStyle`<sup>Required</sup> <a name="strokeStyle" id="cdk-arch.DrawnObject.property.strokeStyle"></a>
+
+```typescript
+public readonly strokeStyle: StrokeStyle;
+```
+
+- *Type:* <a href="#cdk-arch.StrokeStyle">StrokeStyle</a>
+
+---
+
+##### `strokeWidth`<sup>Required</sup> <a name="strokeWidth" id="cdk-arch.DrawnObject.property.strokeWidth"></a>
+
+```typescript
+public readonly strokeWidth: number;
+```
+
+- *Type:* number
+
+---
+
 
 ### Ellipse <a name="Ellipse" id="cdk-arch.Ellipse"></a>
 
@@ -1872,18 +2562,18 @@ public readonly strokeWidth: number;
 ```typescript
 import { Ellipse } from 'cdk-arch'
 
-new Ellipse(args: RectangleProps)
+new Ellipse(args: EllipseProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk-arch.Ellipse.Initializer.parameter.args">args</a></code> | <code><a href="#cdk-arch.RectangleProps">RectangleProps</a></code> | *No description.* |
+| <code><a href="#cdk-arch.Ellipse.Initializer.parameter.args">args</a></code> | <code><a href="#cdk-arch.EllipseProps">EllipseProps</a></code> | *No description.* |
 
 ---
 
 ##### `args`<sup>Required</sup> <a name="args" id="cdk-arch.Ellipse.Initializer.parameter.args"></a>
 
-- *Type:* <a href="#cdk-arch.RectangleProps">RectangleProps</a>
+- *Type:* <a href="#cdk-arch.EllipseProps">EllipseProps</a>
 
 ---
 
@@ -1914,31 +2604,26 @@ public addBoundElement(element: ExcaliDrawPrimitive): void
 | --- | --- | --- |
 | <code><a href="#cdk-arch.Ellipse.property.angle">angle</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Ellipse.property.boundElements">boundElements</a></code> | <code><a href="#cdk-arch.BoundElement">BoundElement</a>[]</code> | *No description.* |
-| <code><a href="#cdk-arch.Ellipse.property.frameId">frameId</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.Ellipse.property.frameId">frameId</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Ellipse.property.groupIds">groupIds</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#cdk-arch.Ellipse.property.height">height</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Ellipse.property.id">id</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-arch.Ellipse.property.isDeleted">isDeleted</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#cdk-arch.Ellipse.property.link">link</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.Ellipse.property.link">link</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Ellipse.property.locked">locked</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-arch.Ellipse.property.seed">seed</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Ellipse.property.type">type</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-arch.Ellipse.property.updated">updated</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-arch.Ellipse.property.updated">updated</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Ellipse.property.version">version</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Ellipse.property.versionNonce">versionNonce</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Ellipse.property.width">width</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Ellipse.property.x">x</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Ellipse.property.y">y</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Ellipse.property.backgroundColor">backgroundColor</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-arch.Ellipse.property.endArrowhead">endArrowhead</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.Ellipse.property.endBinding">endBinding</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Ellipse.property.fillStyle">fillStyle</a></code> | <code><a href="#cdk-arch.FillStyle">FillStyle</a></code> | *No description.* |
-| <code><a href="#cdk-arch.Ellipse.property.lastCommittedPoint">lastCommittedPoint</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Ellipse.property.opacity">opacity</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Ellipse.property.roughness">roughness</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Ellipse.property.roundness">roundness</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.Ellipse.property.startArrowhead">startArrowhead</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.Ellipse.property.startBinding">startBinding</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Ellipse.property.strokeColor">strokeColor</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-arch.Ellipse.property.strokeStyle">strokeStyle</a></code> | <code><a href="#cdk-arch.StrokeStyle">StrokeStyle</a></code> | *No description.* |
 | <code><a href="#cdk-arch.Ellipse.property.strokeWidth">strokeWidth</a></code> | <code>number</code> | *No description.* |
@@ -1968,10 +2653,10 @@ public readonly boundElements: BoundElement[];
 ##### `frameId`<sup>Required</sup> <a name="frameId" id="cdk-arch.Ellipse.property.frameId"></a>
 
 ```typescript
-public readonly frameId: number;
+public readonly frameId: any;
 ```
 
-- *Type:* number
+- *Type:* any
 
 ---
 
@@ -2018,10 +2703,10 @@ public readonly isDeleted: boolean;
 ##### `link`<sup>Required</sup> <a name="link" id="cdk-arch.Ellipse.property.link"></a>
 
 ```typescript
-public readonly link: string;
+public readonly link: any;
 ```
 
-- *Type:* string
+- *Type:* any
 
 ---
 
@@ -2058,10 +2743,10 @@ public readonly type: string;
 ##### `updated`<sup>Required</sup> <a name="updated" id="cdk-arch.Ellipse.property.updated"></a>
 
 ```typescript
-public readonly updated: boolean;
+public readonly updated: number;
 ```
 
-- *Type:* boolean
+- *Type:* number
 
 ---
 
@@ -2125,26 +2810,6 @@ public readonly backgroundColor: string;
 
 ---
 
-##### `endArrowhead`<sup>Required</sup> <a name="endArrowhead" id="cdk-arch.Ellipse.property.endArrowhead"></a>
-
-```typescript
-public readonly endArrowhead: any;
-```
-
-- *Type:* any
-
----
-
-##### `endBinding`<sup>Required</sup> <a name="endBinding" id="cdk-arch.Ellipse.property.endBinding"></a>
-
-```typescript
-public readonly endBinding: any;
-```
-
-- *Type:* any
-
----
-
 ##### `fillStyle`<sup>Required</sup> <a name="fillStyle" id="cdk-arch.Ellipse.property.fillStyle"></a>
 
 ```typescript
@@ -2152,16 +2817,6 @@ public readonly fillStyle: FillStyle;
 ```
 
 - *Type:* <a href="#cdk-arch.FillStyle">FillStyle</a>
-
----
-
-##### `lastCommittedPoint`<sup>Required</sup> <a name="lastCommittedPoint" id="cdk-arch.Ellipse.property.lastCommittedPoint"></a>
-
-```typescript
-public readonly lastCommittedPoint: any;
-```
-
-- *Type:* any
 
 ---
 
@@ -2189,26 +2844,6 @@ public readonly roughness: number;
 
 ```typescript
 public readonly roundness: any;
-```
-
-- *Type:* any
-
----
-
-##### `startArrowhead`<sup>Required</sup> <a name="startArrowhead" id="cdk-arch.Ellipse.property.startArrowhead"></a>
-
-```typescript
-public readonly startArrowhead: any;
-```
-
-- *Type:* any
-
----
-
-##### `startBinding`<sup>Required</sup> <a name="startBinding" id="cdk-arch.Ellipse.property.startBinding"></a>
-
-```typescript
-public readonly startBinding: any;
 ```
 
 - *Type:* any
@@ -2295,16 +2930,16 @@ public addBoundElement(element: ExcaliDrawPrimitive): void
 | --- | --- | --- |
 | <code><a href="#cdk-arch.ExcaliDrawPrimitive.property.angle">angle</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.ExcaliDrawPrimitive.property.boundElements">boundElements</a></code> | <code><a href="#cdk-arch.BoundElement">BoundElement</a>[]</code> | *No description.* |
-| <code><a href="#cdk-arch.ExcaliDrawPrimitive.property.frameId">frameId</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.ExcaliDrawPrimitive.property.frameId">frameId</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.ExcaliDrawPrimitive.property.groupIds">groupIds</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#cdk-arch.ExcaliDrawPrimitive.property.height">height</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.ExcaliDrawPrimitive.property.id">id</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-arch.ExcaliDrawPrimitive.property.isDeleted">isDeleted</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#cdk-arch.ExcaliDrawPrimitive.property.link">link</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.ExcaliDrawPrimitive.property.link">link</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.ExcaliDrawPrimitive.property.locked">locked</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-arch.ExcaliDrawPrimitive.property.seed">seed</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.ExcaliDrawPrimitive.property.type">type</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-arch.ExcaliDrawPrimitive.property.updated">updated</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-arch.ExcaliDrawPrimitive.property.updated">updated</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.ExcaliDrawPrimitive.property.version">version</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.ExcaliDrawPrimitive.property.versionNonce">versionNonce</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.ExcaliDrawPrimitive.property.width">width</a></code> | <code>number</code> | *No description.* |
@@ -2336,10 +2971,10 @@ public readonly boundElements: BoundElement[];
 ##### `frameId`<sup>Required</sup> <a name="frameId" id="cdk-arch.ExcaliDrawPrimitive.property.frameId"></a>
 
 ```typescript
-public readonly frameId: number;
+public readonly frameId: any;
 ```
 
-- *Type:* number
+- *Type:* any
 
 ---
 
@@ -2386,10 +3021,10 @@ public readonly isDeleted: boolean;
 ##### `link`<sup>Required</sup> <a name="link" id="cdk-arch.ExcaliDrawPrimitive.property.link"></a>
 
 ```typescript
-public readonly link: string;
+public readonly link: any;
 ```
 
-- *Type:* string
+- *Type:* any
 
 ---
 
@@ -2426,10 +3061,10 @@ public readonly type: string;
 ##### `updated`<sup>Required</sup> <a name="updated" id="cdk-arch.ExcaliDrawPrimitive.property.updated"></a>
 
 ```typescript
-public readonly updated: boolean;
+public readonly updated: number;
 ```
 
-- *Type:* boolean
+- *Type:* number
 
 ---
 
@@ -2491,18 +3126,11 @@ public readonly y: number;
 ```typescript
 import { Icon } from 'cdk-arch'
 
-new Icon(node: IConstruct)
+new Icon()
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk-arch.Icon.Initializer.parameter.node">node</a></code> | <code>constructs.IConstruct</code> | *No description.* |
-
----
-
-##### `node`<sup>Required</sup> <a name="node" id="cdk-arch.Icon.Initializer.parameter.node"></a>
-
-- *Type:* constructs.IConstruct
 
 ---
 
@@ -2525,7 +3153,7 @@ public elements(): ExcaliDrawPrimitive[]
 ##### `loadJsonIcon` <a name="loadJsonIcon" id="cdk-arch.Icon.loadJsonIcon"></a>
 
 ```typescript
-public loadJsonIcon(iconFile: string, node: IConstruct, iconGroupId: string): void
+public loadJsonIcon(iconFile: string, node: IConstruct): void
 ```
 
 ###### `iconFile`<sup>Required</sup> <a name="iconFile" id="cdk-arch.Icon.loadJsonIcon.parameter.iconFile"></a>
@@ -2537,12 +3165,6 @@ public loadJsonIcon(iconFile: string, node: IConstruct, iconGroupId: string): vo
 ###### `node`<sup>Required</sup> <a name="node" id="cdk-arch.Icon.loadJsonIcon.parameter.node"></a>
 
 - *Type:* constructs.IConstruct
-
----
-
-###### `iconGroupId`<sup>Required</sup> <a name="iconGroupId" id="cdk-arch.Icon.loadJsonIcon.parameter.iconGroupId"></a>
-
-- *Type:* string
 
 ---
 
@@ -2564,36 +3186,35 @@ public moveIcon(x: number, y: number): void
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-arch.Icon.fromConstruct">fromConstruct</a></code> | *No description.* |
+
+---
+
+##### `fromConstruct` <a name="fromConstruct" id="cdk-arch.Icon.fromConstruct"></a>
+
+```typescript
+import { Icon } from 'cdk-arch'
+
+Icon.fromConstruct(node: IConstruct)
+```
+
+###### `node`<sup>Required</sup> <a name="node" id="cdk-arch.Icon.fromConstruct.parameter.node"></a>
+
+- *Type:* constructs.IConstruct
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk-arch.Icon.property.iconPath">iconPath</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-arch.Icon.property.icons">icons</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
 | <code><a href="#cdk-arch.Icon.property.box">box</a></code> | <code><a href="#cdk-arch.Rectangle">Rectangle</a></code> | *No description.* |
 | <code><a href="#cdk-arch.Icon.property.iconElements">iconElements</a></code> | <code><a href="#cdk-arch.ExcaliDrawPrimitive">ExcaliDrawPrimitive</a>[]</code> | *No description.* |
 | <code><a href="#cdk-arch.Icon.property.text">text</a></code> | <code><a href="#cdk-arch.Text">Text</a></code> | *No description.* |
-
----
-
-##### `iconPath`<sup>Required</sup> <a name="iconPath" id="cdk-arch.Icon.property.iconPath"></a>
-
-```typescript
-public readonly iconPath: string;
-```
-
-- *Type:* string
-
----
-
-##### `icons`<sup>Required</sup> <a name="icons" id="cdk-arch.Icon.property.icons"></a>
-
-```typescript
-public readonly icons: {[ key: string ]: string};
-```
-
-- *Type:* {[ key: string ]: string}
 
 ---
 
@@ -2627,6 +3248,34 @@ public readonly text: Text;
 
 ---
 
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-arch.Icon.property.iconPath">iconPath</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.Icon.property.icons">icons</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
+
+---
+
+##### `iconPath`<sup>Required</sup> <a name="iconPath" id="cdk-arch.Icon.property.iconPath"></a>
+
+```typescript
+public readonly iconPath: string;
+```
+
+- *Type:* string
+
+---
+
+##### `icons`<sup>Required</sup> <a name="icons" id="cdk-arch.Icon.property.icons"></a>
+
+```typescript
+public readonly icons: {[ key: string ]: string};
+```
+
+- *Type:* {[ key: string ]: string}
+
+---
 
 ### Line <a name="Line" id="cdk-arch.Line"></a>
 
@@ -2677,35 +3326,35 @@ public addBoundElement(element: ExcaliDrawPrimitive): void
 | --- | --- | --- |
 | <code><a href="#cdk-arch.Line.property.angle">angle</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Line.property.boundElements">boundElements</a></code> | <code><a href="#cdk-arch.BoundElement">BoundElement</a>[]</code> | *No description.* |
-| <code><a href="#cdk-arch.Line.property.frameId">frameId</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.Line.property.frameId">frameId</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Line.property.groupIds">groupIds</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#cdk-arch.Line.property.height">height</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Line.property.id">id</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-arch.Line.property.isDeleted">isDeleted</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#cdk-arch.Line.property.link">link</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.Line.property.link">link</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Line.property.locked">locked</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-arch.Line.property.seed">seed</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Line.property.type">type</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-arch.Line.property.updated">updated</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-arch.Line.property.updated">updated</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Line.property.version">version</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Line.property.versionNonce">versionNonce</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Line.property.width">width</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Line.property.x">x</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Line.property.y">y</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Line.property.backgroundColor">backgroundColor</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-arch.Line.property.endArrowhead">endArrowhead</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.Line.property.endBinding">endBinding</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Line.property.fillStyle">fillStyle</a></code> | <code><a href="#cdk-arch.FillStyle">FillStyle</a></code> | *No description.* |
-| <code><a href="#cdk-arch.Line.property.lastCommittedPoint">lastCommittedPoint</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Line.property.opacity">opacity</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-arch.Line.property.points">points</a></code> | <code>number[][]</code> | *No description.* |
 | <code><a href="#cdk-arch.Line.property.roughness">roughness</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Line.property.roundness">roundness</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.Line.property.startArrowhead">startArrowhead</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.Line.property.startBinding">startBinding</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Line.property.strokeColor">strokeColor</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-arch.Line.property.strokeStyle">strokeStyle</a></code> | <code><a href="#cdk-arch.StrokeStyle">StrokeStyle</a></code> | *No description.* |
 | <code><a href="#cdk-arch.Line.property.strokeWidth">strokeWidth</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.Line.property.endArrowhead">endArrowhead</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.Line.property.endBinding">endBinding</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.Line.property.lastCommittedPoint">lastCommittedPoint</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.Line.property.startArrowhead">startArrowhead</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.Line.property.startBinding">startBinding</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.Line.property.points">points</a></code> | <code>number[][]</code> | *No description.* |
 
 ---
 
@@ -2732,10 +3381,10 @@ public readonly boundElements: BoundElement[];
 ##### `frameId`<sup>Required</sup> <a name="frameId" id="cdk-arch.Line.property.frameId"></a>
 
 ```typescript
-public readonly frameId: number;
+public readonly frameId: any;
 ```
 
-- *Type:* number
+- *Type:* any
 
 ---
 
@@ -2782,10 +3431,10 @@ public readonly isDeleted: boolean;
 ##### `link`<sup>Required</sup> <a name="link" id="cdk-arch.Line.property.link"></a>
 
 ```typescript
-public readonly link: string;
+public readonly link: any;
 ```
 
-- *Type:* string
+- *Type:* any
 
 ---
 
@@ -2822,10 +3471,10 @@ public readonly type: string;
 ##### `updated`<sup>Required</sup> <a name="updated" id="cdk-arch.Line.property.updated"></a>
 
 ```typescript
-public readonly updated: boolean;
+public readonly updated: number;
 ```
 
-- *Type:* boolean
+- *Type:* number
 
 ---
 
@@ -2889,26 +3538,6 @@ public readonly backgroundColor: string;
 
 ---
 
-##### `endArrowhead`<sup>Required</sup> <a name="endArrowhead" id="cdk-arch.Line.property.endArrowhead"></a>
-
-```typescript
-public readonly endArrowhead: any;
-```
-
-- *Type:* any
-
----
-
-##### `endBinding`<sup>Required</sup> <a name="endBinding" id="cdk-arch.Line.property.endBinding"></a>
-
-```typescript
-public readonly endBinding: any;
-```
-
-- *Type:* any
-
----
-
 ##### `fillStyle`<sup>Required</sup> <a name="fillStyle" id="cdk-arch.Line.property.fillStyle"></a>
 
 ```typescript
@@ -2919,16 +3548,6 @@ public readonly fillStyle: FillStyle;
 
 ---
 
-##### `lastCommittedPoint`<sup>Required</sup> <a name="lastCommittedPoint" id="cdk-arch.Line.property.lastCommittedPoint"></a>
-
-```typescript
-public readonly lastCommittedPoint: any;
-```
-
-- *Type:* any
-
----
-
 ##### `opacity`<sup>Required</sup> <a name="opacity" id="cdk-arch.Line.property.opacity"></a>
 
 ```typescript
@@ -2936,16 +3555,6 @@ public readonly opacity: number;
 ```
 
 - *Type:* number
-
----
-
-##### `points`<sup>Required</sup> <a name="points" id="cdk-arch.Line.property.points"></a>
-
-```typescript
-public readonly points: number[][];
-```
-
-- *Type:* number[][]
 
 ---
 
@@ -2963,26 +3572,6 @@ public readonly roughness: number;
 
 ```typescript
 public readonly roundness: any;
-```
-
-- *Type:* any
-
----
-
-##### `startArrowhead`<sup>Required</sup> <a name="startArrowhead" id="cdk-arch.Line.property.startArrowhead"></a>
-
-```typescript
-public readonly startArrowhead: any;
-```
-
-- *Type:* any
-
----
-
-##### `startBinding`<sup>Required</sup> <a name="startBinding" id="cdk-arch.Line.property.startBinding"></a>
-
-```typescript
-public readonly startBinding: any;
 ```
 
 - *Type:* any
@@ -3019,6 +3608,447 @@ public readonly strokeWidth: number;
 
 ---
 
+##### `endArrowhead`<sup>Required</sup> <a name="endArrowhead" id="cdk-arch.Line.property.endArrowhead"></a>
+
+```typescript
+public readonly endArrowhead: any;
+```
+
+- *Type:* any
+
+---
+
+##### `endBinding`<sup>Required</sup> <a name="endBinding" id="cdk-arch.Line.property.endBinding"></a>
+
+```typescript
+public readonly endBinding: any;
+```
+
+- *Type:* any
+
+---
+
+##### `lastCommittedPoint`<sup>Required</sup> <a name="lastCommittedPoint" id="cdk-arch.Line.property.lastCommittedPoint"></a>
+
+```typescript
+public readonly lastCommittedPoint: any;
+```
+
+- *Type:* any
+
+---
+
+##### `startArrowhead`<sup>Required</sup> <a name="startArrowhead" id="cdk-arch.Line.property.startArrowhead"></a>
+
+```typescript
+public readonly startArrowhead: any;
+```
+
+- *Type:* any
+
+---
+
+##### `startBinding`<sup>Required</sup> <a name="startBinding" id="cdk-arch.Line.property.startBinding"></a>
+
+```typescript
+public readonly startBinding: any;
+```
+
+- *Type:* any
+
+---
+
+##### `points`<sup>Required</sup> <a name="points" id="cdk-arch.Line.property.points"></a>
+
+```typescript
+public readonly points: number[][];
+```
+
+- *Type:* number[][]
+
+---
+
+
+### LineLike <a name="LineLike" id="cdk-arch.LineLike"></a>
+
+#### Initializers <a name="Initializers" id="cdk-arch.LineLike.Initializer"></a>
+
+```typescript
+import { LineLike } from 'cdk-arch'
+
+new LineLike(args: LineLikeProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-arch.LineLike.Initializer.parameter.args">args</a></code> | <code><a href="#cdk-arch.LineLikeProps">LineLikeProps</a></code> | *No description.* |
+
+---
+
+##### `args`<sup>Required</sup> <a name="args" id="cdk-arch.LineLike.Initializer.parameter.args"></a>
+
+- *Type:* <a href="#cdk-arch.LineLikeProps">LineLikeProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-arch.LineLike.addBoundElement">addBoundElement</a></code> | *No description.* |
+
+---
+
+##### `addBoundElement` <a name="addBoundElement" id="cdk-arch.LineLike.addBoundElement"></a>
+
+```typescript
+public addBoundElement(element: ExcaliDrawPrimitive): void
+```
+
+###### `element`<sup>Required</sup> <a name="element" id="cdk-arch.LineLike.addBoundElement.parameter.element"></a>
+
+- *Type:* <a href="#cdk-arch.ExcaliDrawPrimitive">ExcaliDrawPrimitive</a>
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-arch.LineLike.property.angle">angle</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.boundElements">boundElements</a></code> | <code><a href="#cdk-arch.BoundElement">BoundElement</a>[]</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.frameId">frameId</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.groupIds">groupIds</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.height">height</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.isDeleted">isDeleted</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.link">link</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.locked">locked</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.seed">seed</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.type">type</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.updated">updated</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.version">version</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.versionNonce">versionNonce</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.width">width</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.x">x</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.y">y</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.backgroundColor">backgroundColor</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.fillStyle">fillStyle</a></code> | <code><a href="#cdk-arch.FillStyle">FillStyle</a></code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.opacity">opacity</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.roughness">roughness</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.roundness">roundness</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.strokeColor">strokeColor</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.strokeStyle">strokeStyle</a></code> | <code><a href="#cdk-arch.StrokeStyle">StrokeStyle</a></code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.strokeWidth">strokeWidth</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.endArrowhead">endArrowhead</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.endBinding">endBinding</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.lastCommittedPoint">lastCommittedPoint</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.startArrowhead">startArrowhead</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.LineLike.property.startBinding">startBinding</a></code> | <code>any</code> | *No description.* |
+
+---
+
+##### `angle`<sup>Required</sup> <a name="angle" id="cdk-arch.LineLike.property.angle"></a>
+
+```typescript
+public readonly angle: number;
+```
+
+- *Type:* number
+
+---
+
+##### `boundElements`<sup>Required</sup> <a name="boundElements" id="cdk-arch.LineLike.property.boundElements"></a>
+
+```typescript
+public readonly boundElements: BoundElement[];
+```
+
+- *Type:* <a href="#cdk-arch.BoundElement">BoundElement</a>[]
+
+---
+
+##### `frameId`<sup>Required</sup> <a name="frameId" id="cdk-arch.LineLike.property.frameId"></a>
+
+```typescript
+public readonly frameId: any;
+```
+
+- *Type:* any
+
+---
+
+##### `groupIds`<sup>Required</sup> <a name="groupIds" id="cdk-arch.LineLike.property.groupIds"></a>
+
+```typescript
+public readonly groupIds: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `height`<sup>Required</sup> <a name="height" id="cdk-arch.LineLike.property.height"></a>
+
+```typescript
+public readonly height: number;
+```
+
+- *Type:* number
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdk-arch.LineLike.property.id"></a>
+
+```typescript
+public readonly id: string;
+```
+
+- *Type:* string
+
+---
+
+##### `isDeleted`<sup>Required</sup> <a name="isDeleted" id="cdk-arch.LineLike.property.isDeleted"></a>
+
+```typescript
+public readonly isDeleted: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `link`<sup>Required</sup> <a name="link" id="cdk-arch.LineLike.property.link"></a>
+
+```typescript
+public readonly link: any;
+```
+
+- *Type:* any
+
+---
+
+##### `locked`<sup>Required</sup> <a name="locked" id="cdk-arch.LineLike.property.locked"></a>
+
+```typescript
+public readonly locked: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `seed`<sup>Required</sup> <a name="seed" id="cdk-arch.LineLike.property.seed"></a>
+
+```typescript
+public readonly seed: number;
+```
+
+- *Type:* number
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="cdk-arch.LineLike.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
+
+---
+
+##### `updated`<sup>Required</sup> <a name="updated" id="cdk-arch.LineLike.property.updated"></a>
+
+```typescript
+public readonly updated: number;
+```
+
+- *Type:* number
+
+---
+
+##### `version`<sup>Required</sup> <a name="version" id="cdk-arch.LineLike.property.version"></a>
+
+```typescript
+public readonly version: number;
+```
+
+- *Type:* number
+
+---
+
+##### `versionNonce`<sup>Required</sup> <a name="versionNonce" id="cdk-arch.LineLike.property.versionNonce"></a>
+
+```typescript
+public readonly versionNonce: number;
+```
+
+- *Type:* number
+
+---
+
+##### `width`<sup>Required</sup> <a name="width" id="cdk-arch.LineLike.property.width"></a>
+
+```typescript
+public readonly width: number;
+```
+
+- *Type:* number
+
+---
+
+##### `x`<sup>Required</sup> <a name="x" id="cdk-arch.LineLike.property.x"></a>
+
+```typescript
+public readonly x: number;
+```
+
+- *Type:* number
+
+---
+
+##### `y`<sup>Required</sup> <a name="y" id="cdk-arch.LineLike.property.y"></a>
+
+```typescript
+public readonly y: number;
+```
+
+- *Type:* number
+
+---
+
+##### `backgroundColor`<sup>Required</sup> <a name="backgroundColor" id="cdk-arch.LineLike.property.backgroundColor"></a>
+
+```typescript
+public readonly backgroundColor: string;
+```
+
+- *Type:* string
+
+---
+
+##### `fillStyle`<sup>Required</sup> <a name="fillStyle" id="cdk-arch.LineLike.property.fillStyle"></a>
+
+```typescript
+public readonly fillStyle: FillStyle;
+```
+
+- *Type:* <a href="#cdk-arch.FillStyle">FillStyle</a>
+
+---
+
+##### `opacity`<sup>Required</sup> <a name="opacity" id="cdk-arch.LineLike.property.opacity"></a>
+
+```typescript
+public readonly opacity: number;
+```
+
+- *Type:* number
+
+---
+
+##### `roughness`<sup>Required</sup> <a name="roughness" id="cdk-arch.LineLike.property.roughness"></a>
+
+```typescript
+public readonly roughness: number;
+```
+
+- *Type:* number
+
+---
+
+##### `roundness`<sup>Required</sup> <a name="roundness" id="cdk-arch.LineLike.property.roundness"></a>
+
+```typescript
+public readonly roundness: any;
+```
+
+- *Type:* any
+
+---
+
+##### `strokeColor`<sup>Required</sup> <a name="strokeColor" id="cdk-arch.LineLike.property.strokeColor"></a>
+
+```typescript
+public readonly strokeColor: string;
+```
+
+- *Type:* string
+
+---
+
+##### `strokeStyle`<sup>Required</sup> <a name="strokeStyle" id="cdk-arch.LineLike.property.strokeStyle"></a>
+
+```typescript
+public readonly strokeStyle: StrokeStyle;
+```
+
+- *Type:* <a href="#cdk-arch.StrokeStyle">StrokeStyle</a>
+
+---
+
+##### `strokeWidth`<sup>Required</sup> <a name="strokeWidth" id="cdk-arch.LineLike.property.strokeWidth"></a>
+
+```typescript
+public readonly strokeWidth: number;
+```
+
+- *Type:* number
+
+---
+
+##### `endArrowhead`<sup>Required</sup> <a name="endArrowhead" id="cdk-arch.LineLike.property.endArrowhead"></a>
+
+```typescript
+public readonly endArrowhead: any;
+```
+
+- *Type:* any
+
+---
+
+##### `endBinding`<sup>Required</sup> <a name="endBinding" id="cdk-arch.LineLike.property.endBinding"></a>
+
+```typescript
+public readonly endBinding: any;
+```
+
+- *Type:* any
+
+---
+
+##### `lastCommittedPoint`<sup>Required</sup> <a name="lastCommittedPoint" id="cdk-arch.LineLike.property.lastCommittedPoint"></a>
+
+```typescript
+public readonly lastCommittedPoint: any;
+```
+
+- *Type:* any
+
+---
+
+##### `startArrowhead`<sup>Required</sup> <a name="startArrowhead" id="cdk-arch.LineLike.property.startArrowhead"></a>
+
+```typescript
+public readonly startArrowhead: any;
+```
+
+- *Type:* any
+
+---
+
+##### `startBinding`<sup>Required</sup> <a name="startBinding" id="cdk-arch.LineLike.property.startBinding"></a>
+
+```typescript
+public readonly startBinding: any;
+```
+
+- *Type:* any
+
+---
+
 
 ### Rectangle <a name="Rectangle" id="cdk-arch.Rectangle"></a>
 
@@ -3027,18 +4057,18 @@ public readonly strokeWidth: number;
 ```typescript
 import { Rectangle } from 'cdk-arch'
 
-new Rectangle(args: RectangleProps)
+new Rectangle(args: LineLikeProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk-arch.Rectangle.Initializer.parameter.args">args</a></code> | <code><a href="#cdk-arch.RectangleProps">RectangleProps</a></code> | *No description.* |
+| <code><a href="#cdk-arch.Rectangle.Initializer.parameter.args">args</a></code> | <code><a href="#cdk-arch.LineLikeProps">LineLikeProps</a></code> | *No description.* |
 
 ---
 
 ##### `args`<sup>Required</sup> <a name="args" id="cdk-arch.Rectangle.Initializer.parameter.args"></a>
 
-- *Type:* <a href="#cdk-arch.RectangleProps">RectangleProps</a>
+- *Type:* <a href="#cdk-arch.LineLikeProps">LineLikeProps</a>
 
 ---
 
@@ -3069,31 +4099,26 @@ public addBoundElement(element: ExcaliDrawPrimitive): void
 | --- | --- | --- |
 | <code><a href="#cdk-arch.Rectangle.property.angle">angle</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Rectangle.property.boundElements">boundElements</a></code> | <code><a href="#cdk-arch.BoundElement">BoundElement</a>[]</code> | *No description.* |
-| <code><a href="#cdk-arch.Rectangle.property.frameId">frameId</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.Rectangle.property.frameId">frameId</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Rectangle.property.groupIds">groupIds</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#cdk-arch.Rectangle.property.height">height</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Rectangle.property.id">id</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-arch.Rectangle.property.isDeleted">isDeleted</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#cdk-arch.Rectangle.property.link">link</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.Rectangle.property.link">link</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Rectangle.property.locked">locked</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-arch.Rectangle.property.seed">seed</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Rectangle.property.type">type</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-arch.Rectangle.property.updated">updated</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-arch.Rectangle.property.updated">updated</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Rectangle.property.version">version</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Rectangle.property.versionNonce">versionNonce</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Rectangle.property.width">width</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Rectangle.property.x">x</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Rectangle.property.y">y</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Rectangle.property.backgroundColor">backgroundColor</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-arch.Rectangle.property.endArrowhead">endArrowhead</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.Rectangle.property.endBinding">endBinding</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Rectangle.property.fillStyle">fillStyle</a></code> | <code><a href="#cdk-arch.FillStyle">FillStyle</a></code> | *No description.* |
-| <code><a href="#cdk-arch.Rectangle.property.lastCommittedPoint">lastCommittedPoint</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Rectangle.property.opacity">opacity</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Rectangle.property.roughness">roughness</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Rectangle.property.roundness">roundness</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.Rectangle.property.startArrowhead">startArrowhead</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-arch.Rectangle.property.startBinding">startBinding</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Rectangle.property.strokeColor">strokeColor</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-arch.Rectangle.property.strokeStyle">strokeStyle</a></code> | <code><a href="#cdk-arch.StrokeStyle">StrokeStyle</a></code> | *No description.* |
 | <code><a href="#cdk-arch.Rectangle.property.strokeWidth">strokeWidth</a></code> | <code>number</code> | *No description.* |
@@ -3123,10 +4148,10 @@ public readonly boundElements: BoundElement[];
 ##### `frameId`<sup>Required</sup> <a name="frameId" id="cdk-arch.Rectangle.property.frameId"></a>
 
 ```typescript
-public readonly frameId: number;
+public readonly frameId: any;
 ```
 
-- *Type:* number
+- *Type:* any
 
 ---
 
@@ -3173,10 +4198,10 @@ public readonly isDeleted: boolean;
 ##### `link`<sup>Required</sup> <a name="link" id="cdk-arch.Rectangle.property.link"></a>
 
 ```typescript
-public readonly link: string;
+public readonly link: any;
 ```
 
-- *Type:* string
+- *Type:* any
 
 ---
 
@@ -3213,10 +4238,10 @@ public readonly type: string;
 ##### `updated`<sup>Required</sup> <a name="updated" id="cdk-arch.Rectangle.property.updated"></a>
 
 ```typescript
-public readonly updated: boolean;
+public readonly updated: number;
 ```
 
-- *Type:* boolean
+- *Type:* number
 
 ---
 
@@ -3280,26 +4305,6 @@ public readonly backgroundColor: string;
 
 ---
 
-##### `endArrowhead`<sup>Required</sup> <a name="endArrowhead" id="cdk-arch.Rectangle.property.endArrowhead"></a>
-
-```typescript
-public readonly endArrowhead: any;
-```
-
-- *Type:* any
-
----
-
-##### `endBinding`<sup>Required</sup> <a name="endBinding" id="cdk-arch.Rectangle.property.endBinding"></a>
-
-```typescript
-public readonly endBinding: any;
-```
-
-- *Type:* any
-
----
-
 ##### `fillStyle`<sup>Required</sup> <a name="fillStyle" id="cdk-arch.Rectangle.property.fillStyle"></a>
 
 ```typescript
@@ -3307,16 +4312,6 @@ public readonly fillStyle: FillStyle;
 ```
 
 - *Type:* <a href="#cdk-arch.FillStyle">FillStyle</a>
-
----
-
-##### `lastCommittedPoint`<sup>Required</sup> <a name="lastCommittedPoint" id="cdk-arch.Rectangle.property.lastCommittedPoint"></a>
-
-```typescript
-public readonly lastCommittedPoint: any;
-```
-
-- *Type:* any
 
 ---
 
@@ -3344,26 +4339,6 @@ public readonly roughness: number;
 
 ```typescript
 public readonly roundness: any;
-```
-
-- *Type:* any
-
----
-
-##### `startArrowhead`<sup>Required</sup> <a name="startArrowhead" id="cdk-arch.Rectangle.property.startArrowhead"></a>
-
-```typescript
-public readonly startArrowhead: any;
-```
-
-- *Type:* any
-
----
-
-##### `startBinding`<sup>Required</sup> <a name="startBinding" id="cdk-arch.Rectangle.property.startBinding"></a>
-
-```typescript
-public readonly startBinding: any;
 ```
 
 - *Type:* any
@@ -3421,7 +4396,7 @@ new SketchBuilder()
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-arch.SketchBuilder.addArrow">addArrow</a></code> | *No description.* |
-| <code><a href="#cdk-arch.SketchBuilder.addIcon">addIcon</a></code> | *No description.* |
+| <code><a href="#cdk-arch.SketchBuilder.addIconForConstruct">addIconForConstruct</a></code> | *No description.* |
 | <code><a href="#cdk-arch.SketchBuilder.exportToFile">exportToFile</a></code> | *No description.* |
 | <code><a href="#cdk-arch.SketchBuilder.registerArrow">registerArrow</a></code> | *No description.* |
 | <code><a href="#cdk-arch.SketchBuilder.visit">visit</a></code> | *No description.* |
@@ -3446,19 +4421,19 @@ public addArrow(startNodeId: string, endNodeId: string): string
 
 ---
 
-##### `addIcon` <a name="addIcon" id="cdk-arch.SketchBuilder.addIcon"></a>
+##### `addIconForConstruct` <a name="addIconForConstruct" id="cdk-arch.SketchBuilder.addIconForConstruct"></a>
 
 ```typescript
-public addIcon(node: IConstruct, metadata: MetadataEntry): void
+public addIconForConstruct(node: IConstruct, metadata: MetadataEntry): void
 ```
 
-###### `node`<sup>Required</sup> <a name="node" id="cdk-arch.SketchBuilder.addIcon.parameter.node"></a>
+###### `node`<sup>Required</sup> <a name="node" id="cdk-arch.SketchBuilder.addIconForConstruct.parameter.node"></a>
 
 - *Type:* constructs.IConstruct
 
 ---
 
-###### `metadata`<sup>Required</sup> <a name="metadata" id="cdk-arch.SketchBuilder.addIcon.parameter.metadata"></a>
+###### `metadata`<sup>Required</sup> <a name="metadata" id="cdk-arch.SketchBuilder.addIconForConstruct.parameter.metadata"></a>
 
 - *Type:* constructs.MetadataEntry
 
@@ -3608,26 +4583,36 @@ public addBoundElement(element: ExcaliDrawPrimitive): void
 | --- | --- | --- |
 | <code><a href="#cdk-arch.Text.property.angle">angle</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Text.property.boundElements">boundElements</a></code> | <code><a href="#cdk-arch.BoundElement">BoundElement</a>[]</code> | *No description.* |
-| <code><a href="#cdk-arch.Text.property.frameId">frameId</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.Text.property.frameId">frameId</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Text.property.groupIds">groupIds</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#cdk-arch.Text.property.height">height</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Text.property.id">id</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-arch.Text.property.isDeleted">isDeleted</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#cdk-arch.Text.property.link">link</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.Text.property.link">link</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Text.property.locked">locked</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-arch.Text.property.seed">seed</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Text.property.type">type</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-arch.Text.property.updated">updated</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-arch.Text.property.updated">updated</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Text.property.version">version</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Text.property.versionNonce">versionNonce</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Text.property.width">width</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Text.property.x">x</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Text.property.y">y</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.Text.property.backgroundColor">backgroundColor</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.Text.property.fillStyle">fillStyle</a></code> | <code><a href="#cdk-arch.FillStyle">FillStyle</a></code> | *No description.* |
+| <code><a href="#cdk-arch.Text.property.opacity">opacity</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.Text.property.roughness">roughness</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.Text.property.roundness">roundness</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#cdk-arch.Text.property.strokeColor">strokeColor</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.Text.property.strokeStyle">strokeStyle</a></code> | <code><a href="#cdk-arch.StrokeStyle">StrokeStyle</a></code> | *No description.* |
+| <code><a href="#cdk-arch.Text.property.strokeWidth">strokeWidth</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Text.property.baseline">baseline</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Text.property.containerId">containerId</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-arch.Text.property.fontFamily">fontFamily</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-arch.Text.property.fontSize">fontSize</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Text.property.lineHeight">lineHeight</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-arch.Text.property.originalText">originalText</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-arch.Text.property.text">text</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-arch.Text.property.textAlign">textAlign</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-arch.Text.property.verticalAlign">verticalAlign</a></code> | <code>string</code> | *No description.* |
 
@@ -3656,10 +4641,10 @@ public readonly boundElements: BoundElement[];
 ##### `frameId`<sup>Required</sup> <a name="frameId" id="cdk-arch.Text.property.frameId"></a>
 
 ```typescript
-public readonly frameId: number;
+public readonly frameId: any;
 ```
 
-- *Type:* number
+- *Type:* any
 
 ---
 
@@ -3706,10 +4691,10 @@ public readonly isDeleted: boolean;
 ##### `link`<sup>Required</sup> <a name="link" id="cdk-arch.Text.property.link"></a>
 
 ```typescript
-public readonly link: string;
+public readonly link: any;
 ```
 
-- *Type:* string
+- *Type:* any
 
 ---
 
@@ -3746,10 +4731,10 @@ public readonly type: string;
 ##### `updated`<sup>Required</sup> <a name="updated" id="cdk-arch.Text.property.updated"></a>
 
 ```typescript
-public readonly updated: boolean;
+public readonly updated: number;
 ```
 
-- *Type:* boolean
+- *Type:* number
 
 ---
 
@@ -3803,6 +4788,86 @@ public readonly y: number;
 
 ---
 
+##### `backgroundColor`<sup>Required</sup> <a name="backgroundColor" id="cdk-arch.Text.property.backgroundColor"></a>
+
+```typescript
+public readonly backgroundColor: string;
+```
+
+- *Type:* string
+
+---
+
+##### `fillStyle`<sup>Required</sup> <a name="fillStyle" id="cdk-arch.Text.property.fillStyle"></a>
+
+```typescript
+public readonly fillStyle: FillStyle;
+```
+
+- *Type:* <a href="#cdk-arch.FillStyle">FillStyle</a>
+
+---
+
+##### `opacity`<sup>Required</sup> <a name="opacity" id="cdk-arch.Text.property.opacity"></a>
+
+```typescript
+public readonly opacity: number;
+```
+
+- *Type:* number
+
+---
+
+##### `roughness`<sup>Required</sup> <a name="roughness" id="cdk-arch.Text.property.roughness"></a>
+
+```typescript
+public readonly roughness: number;
+```
+
+- *Type:* number
+
+---
+
+##### `roundness`<sup>Required</sup> <a name="roundness" id="cdk-arch.Text.property.roundness"></a>
+
+```typescript
+public readonly roundness: any;
+```
+
+- *Type:* any
+
+---
+
+##### `strokeColor`<sup>Required</sup> <a name="strokeColor" id="cdk-arch.Text.property.strokeColor"></a>
+
+```typescript
+public readonly strokeColor: string;
+```
+
+- *Type:* string
+
+---
+
+##### `strokeStyle`<sup>Required</sup> <a name="strokeStyle" id="cdk-arch.Text.property.strokeStyle"></a>
+
+```typescript
+public readonly strokeStyle: StrokeStyle;
+```
+
+- *Type:* <a href="#cdk-arch.StrokeStyle">StrokeStyle</a>
+
+---
+
+##### `strokeWidth`<sup>Required</sup> <a name="strokeWidth" id="cdk-arch.Text.property.strokeWidth"></a>
+
+```typescript
+public readonly strokeWidth: number;
+```
+
+- *Type:* number
+
+---
+
 ##### `baseline`<sup>Required</sup> <a name="baseline" id="cdk-arch.Text.property.baseline"></a>
 
 ```typescript
@@ -3833,6 +4898,16 @@ public readonly fontFamily: number;
 
 ---
 
+##### `fontSize`<sup>Required</sup> <a name="fontSize" id="cdk-arch.Text.property.fontSize"></a>
+
+```typescript
+public readonly fontSize: number;
+```
+
+- *Type:* number
+
+---
+
 ##### `lineHeight`<sup>Required</sup> <a name="lineHeight" id="cdk-arch.Text.property.lineHeight"></a>
 
 ```typescript
@@ -3847,6 +4922,16 @@ public readonly lineHeight: number;
 
 ```typescript
 public readonly originalText: string;
+```
+
+- *Type:* string
+
+---
+
+##### `text`<sup>Required</sup> <a name="text" id="cdk-arch.Text.property.text"></a>
+
+```typescript
+public readonly text: string;
 ```
 
 - *Type:* string
@@ -3965,10 +5050,22 @@ public readonly verticalAlign: string;
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-arch.TextAlign.CENTER">CENTER</a></code> | *No description.* |
+| <code><a href="#cdk-arch.TextAlign.LEFT">LEFT</a></code> | *No description.* |
+| <code><a href="#cdk-arch.TextAlign.RIGHT">RIGHT</a></code> | *No description.* |
 
 ---
 
 ##### `CENTER` <a name="CENTER" id="cdk-arch.TextAlign.CENTER"></a>
+
+---
+
+
+##### `LEFT` <a name="LEFT" id="cdk-arch.TextAlign.LEFT"></a>
+
+---
+
+
+##### `RIGHT` <a name="RIGHT" id="cdk-arch.TextAlign.RIGHT"></a>
 
 ---
 

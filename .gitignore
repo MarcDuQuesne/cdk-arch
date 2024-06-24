@@ -34,7 +34,8 @@ cdk.out
 *.js
 *.d.ts
 .github-token
-.pypi*
+.pypi-token
+.npm-token
 /test-reports/
 junit.xml
 /coverage/
