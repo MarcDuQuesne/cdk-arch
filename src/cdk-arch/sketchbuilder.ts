@@ -1,4 +1,6 @@
+import { IConstruct } from 'constructs';
 import * as fs from 'fs';
+import { Icon } from './icons';
 import * as primitives from './primitives';
 
 export interface AppState {
@@ -6,19 +8,13 @@ export interface AppState {
   readonly gridSize: any;
 }
 
-export interface Data {
-  readonly type: string;
-  readonly version: number;
-  readonly source: string;
-  readonly elements: any[];
-  readonly appState: AppState;
-}
-
 export class SketchBuilder {
 
-  data: Data;
-  drawObjs: primitives.ExcaliDrawPrimitive[];
-  groups: any[];
+  data: any;
+  icons: Icon[];
+  arrows: primitives.Arrow[] = [];
+
+  private delayedArrows: any[] = [];
 
   constructor() {
     this.data = {
@@ -31,32 +27,74 @@ export class SketchBuilder {
         gridSize: null,
       },
     };
-    this.drawObjs = [];
-    this.groups = [];
+    this.icons = [];
   }
 
-  addElement(element: primitives.ExcaliDrawPrimitive): string {
-    this.drawObjs.push(element);
-    return element.id;
-  }
+  public visit(node: IConstruct): void {
 
-  addArrow(startId: string, endId: string): string {
-    const arrow = primitives.Arrow.connector(startId, endId);
-    this.drawObjs.push(arrow);
+    const metadataList = node.node.metadata;
 
-    for (const obj of this.drawObjs) {
-      if (obj.id === startId || obj.id === endId) {
-        obj.addBoundElement(arrow);
+    // if the medatadat contains 'CDKArch':
+
+    for (const metadata of metadataList) {
+      if (metadata.type === 'CDKArch Element') {
+        this.addIcon(new Icon(node));
       }
+      if (metadata.type === 'CDKArch Connection') {
+        this.registerArrow(metadata.data.startId, metadata.data.endId);
+      }
+
+    }
+  }
+
+  // addElement(element: primitives.ExcaliDrawPrimitive): string {
+  //   this.drawObjs.push(element);
+  //   return element.id;
+  // }
+
+  addIcon(icon: Icon): void {
+    this.icons.push(icon);
+  }
+
+  // We register the need for a connection, but delay this up to when all the icons are there.
+  registerArrow(startNodeId: string, endNodeId: string) {
+    this.delayedArrows.push([startNodeId, endNodeId]);
+  }
+
+  addArrow(startNodeId: string, endNodeId: string): string {
+
+    // find an icon in this.Icon that contains a groupId called startnodeId, and return the boundaryBox Id.
+    const startIcon = this.icons.find(icon => icon.box.groupIds.includes(startNodeId));
+    const endIcon = this.icons.find(icon => icon.box.groupIds.includes(endNodeId));
+    if (!startIcon) {
+      throw new Error(`Icon with group ID ${startNodeId} not found.`);
+    }
+    if (!endIcon) {
+      throw new Error(`Icon with group ID ${endNodeId} not found.`);
     }
 
+    const arrow = primitives.Arrow.connector(startIcon.box.id, endIcon.box.id);
+    this.arrows.push(arrow);
+
+    for (const obj of [startIcon.box, endIcon.box]) {
+      obj.addBoundElement(arrow);
+    }
     return arrow.id;
   }
 
   exportToFile(savePath: string): void {
-    for (const element of this.drawObjs) {
-      this.data.elements.push(element);
+    for (const icon of this.icons) {
+      this.data.elements = this.data.elements.concat(icon.elements());
     }
+
+    for (const [startId, endId] of this.delayedArrows) {
+      this.addArrow(startId, endId);
+    }
+
+    for (const arrow of this.arrows) {
+      this.data.elements.push(arrow);
+    }
+
 
     if (!savePath.endsWith('.excalidraw')) {
       savePath += '.excalidraw';

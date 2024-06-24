@@ -5,13 +5,13 @@
 import { uuid } from 'uuidv4';
 
 enum PrimitiveType {
-  Line = 'line',
-  Rectangle = 'rectangle',
-  Diamond = 'diamond',
-  Ellipse = 'ellipse',
-  Text = 'text',
-  Arrow = 'arrow',
-  Group = 'group'
+  LINE = 'line',
+  RECTANGLE = 'rectangle',
+  DIAMOND = 'diamond',
+  ELLIPSE = 'ellipse',
+  TEXT = 'text',
+  ARROW = 'arrow',
+  GROUP = 'group'
 }
 
 export interface ExcaliDrawPrimitiveProps {
@@ -23,9 +23,9 @@ export interface ExcaliDrawPrimitiveProps {
   readonly groupIds?: string[];
 }
 
-export interface boundElement {
-  id: string;
-  type: string;
+export interface BoundElement {
+  readonly id: string;
+  readonly type: string;
 }
 
 export abstract class ExcaliDrawPrimitive {
@@ -40,7 +40,7 @@ export abstract class ExcaliDrawPrimitive {
   isDeleted: boolean = false;
   frameId: number = 0;
   angle: number = 0;
-  boundElements: boundElement[] = [];
+  boundElements: BoundElement[] = [];
   updated: boolean = true;
   link: string = '';
   locked: boolean = false;
@@ -68,35 +68,43 @@ export abstract class ExcaliDrawPrimitive {
 }
 
 export interface Roundness {
-  type: number;
+  readonly type: number;
 }
 
 export enum StrokeStyle {
-  Solid = 'solid',
-  Dashed = 'dashed',
-  Dotted = 'dotted'
+  SOLID = 'solid',
+  DASHED = 'dashed',
+  DOTTED = 'dotted'
 }
 
 export enum ArrowHead {
-  Triangle = 'triangle',
-  Arrow = 'arrow'
+  TRIANGLE = 'triangle',
+  ARROW = 'arrow'
 }
 
 
 export enum FillStyle {
-  Hachure = 'hachure',
-  Solid = 'solid',
-  CrossHatch = 'cross-hatch',
-  Dots = 'dots'
+  HACHURE = 'hachure',
+  SOLID = 'solid',
+  CROSSHATCH = 'cross-hatch',
+  DOTS = 'dots'
+}
+
+export enum TextAlign {
+  CENTER = 'center'
+}
+
+export enum VerticalAlign {
+  TOP = 'top'
 }
 
 export interface Binding {
-  elementId: string;
-  focus: number;
-  gap: number;
+  readonly elementId: string;
+  readonly focus: number;
+  readonly gap: number;
 }
 
-export interface DrawnObjectProps extends ExcaliDrawPrimitiveProps {
+interface DrawnObjectProps extends ExcaliDrawPrimitiveProps {
 
   readonly strokeWidth?: number;
   readonly strokeStyle?: StrokeStyle;
@@ -105,47 +113,47 @@ export interface DrawnObjectProps extends ExcaliDrawPrimitiveProps {
   readonly roughness?: number;
   readonly opacity?: number;
   readonly backgroundColor?: string;
-  readonly roundness?: Roundness | null;
-  readonly startBinding?: null;
-  readonly endBinding?: null;
-  readonly lastCommittedPoint?: null;
-  readonly startArrowhead?: null;
-  readonly endArrowhead?: null;
+  readonly roundness?: any;
+  readonly startBinding?: any;
+  readonly endBinding?: any;
+  readonly lastCommittedPoint?: any;
+  readonly startArrowhead?: any;
+  readonly endArrowhead?: any;
 
 }
 
-export abstract class DrawnObject extends ExcaliDrawPrimitive {
+abstract class DrawnObject extends ExcaliDrawPrimitive {
 
-  strokeColor: string = '#000000';
-  strokeWidth: number = 1;
-  strokeStyle: StrokeStyle = StrokeStyle.Solid;
-  fillStyle: FillStyle = FillStyle.Hachure;
-  roughness: number = 1;
-  opacity: number = 100;
-  backgroundColor: string = '#ffffff';
-  roundness: Roundness | null = null;
-  startBinding: null = null;
-  endBinding: null = null;
-  lastCommittedPoint: null = null;
-  startArrowhead: null = null;
-  endArrowhead: null = null;
+  strokeColor: string;
+  strokeWidth: number;
+  strokeStyle: StrokeStyle;
+  fillStyle: FillStyle;
+  roughness: number;
+  opacity: number;
+  backgroundColor: string;
+  roundness: any;
+  startBinding: any;
+  endBinding: any;
+  lastCommittedPoint: any;
+  startArrowhead: any;
+  endArrowhead: any;
 
   constructor(args: DrawnObjectProps) {
 
     super(args);
-    this.strokeColor = args.strokeColor || this.strokeColor;
-    this.fillStyle = args.fillStyle || this.fillStyle;
-    this.strokeWidth = args.strokeWidth || this.strokeWidth;
-    this.strokeStyle = args.strokeStyle || this.strokeStyle;
-    this.roughness = args.roughness || this.roughness;
-    this.opacity = args.opacity || this.opacity;
-    this.backgroundColor = args.backgroundColor || this.backgroundColor;
+    this.strokeColor = args.strokeColor || '#000000';
+    this.fillStyle = args.fillStyle || FillStyle.HACHURE;
+    this.strokeWidth = args.strokeWidth || 1;
+    this.strokeStyle = args.strokeStyle || StrokeStyle.SOLID;
+    this.roughness = args.roughness || 1;
+    this.opacity = args.opacity || 100;
+    this.backgroundColor = args.backgroundColor || '#ffffff';
     this.roundness = args.roundness || this.roundness;
-    this.startBinding = args.startBinding || this.startBinding;
-    this.endBinding = args.endBinding || this.endBinding;
-    this.lastCommittedPoint = args.lastCommittedPoint || this.lastCommittedPoint;
-    this.startArrowhead = args.startArrowhead || this.startArrowhead;
-    this.endArrowhead = args.endArrowhead || this.endArrowhead;
+    this.startBinding = args.startBinding || null;
+    this.endBinding = args.endBinding || null;
+    this.lastCommittedPoint = args.lastCommittedPoint || null;
+    this.startArrowhead = args.startArrowhead || null;
+    this.endArrowhead = args.endArrowhead || null;
   }
 }
 
@@ -157,8 +165,8 @@ export interface LineProps extends DrawnObjectProps {
   readonly backgroundColor?: string;
   readonly startBinding?: any;
   readonly endBinding?: any;
-  readonly lastCommittedPoint?: null;
-  readonly startArrowhead?: null;
+  readonly lastCommittedPoint?: any;
+  readonly startArrowhead?: any;
   readonly endArrowhead?: any;
   readonly points?: number[][];
 
@@ -166,17 +174,17 @@ export interface LineProps extends DrawnObjectProps {
 
 export class Line extends DrawnObject {
 
-  startBinding: null = null;
-  endBinding: null = null;
-  lastCommittedPoint: null = null;
-  startArrowhead: null = null;
-  endArrowhead: null = null;
+  startBinding: any = null;
+  endBinding: any = null;
+  lastCommittedPoint: any = null;
+  startArrowhead: any = null;
+  endArrowhead: any = null;
   points: number[][] = [];
 
   constructor(args: LineProps) {
 
     super({
-      type: PrimitiveType.Line,
+      type: PrimitiveType.LINE,
       ...args,
     });
     this.startBinding = args.startBinding || this.startBinding;
@@ -195,7 +203,7 @@ export class Rectangle extends DrawnObject {
 
   constructor(args: RectangleProps) {
     super({
-      type: PrimitiveType.Rectangle,
+      type: PrimitiveType.RECTANGLE,
       ...args,
     });
   }
@@ -207,7 +215,7 @@ export class Ellipse extends DrawnObject {
 
   constructor(args: RectangleProps) {
     super({
-      type: PrimitiveType.Ellipse,
+      type: PrimitiveType.ELLIPSE,
       ...args,
     });
   }
@@ -226,8 +234,17 @@ export class Arrow extends Line {
 
   constructor(args: LineProps) {
     super({
-      type: PrimitiveType.Arrow,
-      endArrowhead: ArrowHead.Triangle,
+      type: PrimitiveType.ARROW,
+      endArrowhead: ArrowHead.TRIANGLE,
+      strokeColor: '#1e1e1e',
+      backgroundColor: 'transparent',
+      strokeWidth: 2,
+      fillStyle: FillStyle.SOLID,
+      points: [[0, 0], [100, 100]],
+      x: 0,
+      y: 0,
+      width: 100,
+      height: 100,
       ...args,
     });
 
@@ -236,38 +253,38 @@ export class Arrow extends Line {
 
 
 export interface TextProps extends DrawnObjectProps {
-  fontFamily?: number;
-  textAlign?: string;
-  verticalAlign?: string;
-  containerId?: number | null;
-  originalText: string;
-  lineHeight?: number;
-  baseline?: number;
+  readonly fontFamily?: number;
+  readonly textAlign?: string;
+  readonly verticalAlign?: string;
+  readonly containerId?: any;
+  readonly originalText: string;
+  readonly lineHeight?: number;
+  readonly baseline?: number;
 }
 
 export class Text extends ExcaliDrawPrimitive {
 
-  fontFamily: number = 1;
-  textAlign: string = 'center';
-  verticalAlign: string = 'top';
-  containerId: number | null = null;
+  fontFamily: number;
+  textAlign: string;
+  verticalAlign: string;
+  containerId: any;
   originalText: string;
-  lineHeight: number = 1.2;
-  baseline: number = 17;
+  lineHeight: number;
+  baseline: number;
 
   constructor(args: TextProps) {
     super({
-      type: PrimitiveType.Text,
+      type: PrimitiveType.TEXT,
       ...args,
     });
 
-    this.fontFamily = args.fontFamily || this.fontFamily;
-    this.textAlign = args.textAlign || this.textAlign;
-    this.verticalAlign = args.verticalAlign || this.verticalAlign;
-    this.containerId = args.containerId || this.containerId;
+    this.fontFamily = args.fontFamily || 1;
+    this.textAlign = args.textAlign || TextAlign.CENTER;
+    this.verticalAlign = args.verticalAlign || VerticalAlign.TOP;
+    this.containerId = args.containerId || null;
     this.originalText = args.originalText;
-    this.lineHeight = args.lineHeight || this.lineHeight;
-    this.baseline = args.baseline || this.baseline;
+    this.lineHeight = args.lineHeight || 1.2;
+    this.baseline = args.baseline || 17;
   }
 }
 

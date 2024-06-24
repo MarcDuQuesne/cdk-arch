@@ -22,18 +22,14 @@
       "width": 65.08084106445301,
       "height": 65.08084106445301,
       "seed": 1113110306,
-      "groupIds": [
-        "jlooJy6BX3GEJz4q4dO9z",
-        "x0NeT-Wlt4ckeKWzTzXNz",
-        "casqwUZxtmDDp4fWziYzm",
-        "q6Pn7scv3jyWbcKJj0VPG"
-      ],
+      "groupIds": [],
       "frameId": null,
       "roundness": null,
       "boundElements": [],
       "updated": 1719152458527,
       "link": null,
-      "locked": false
+      "locked": false,
+      "boundingBox": true
     },
     {
       "type": "ellipse",
@@ -54,10 +50,7 @@
       "width": 39.10563151041674,
       "height": 10.753995455228363,
       "seed": 1983480546,
-      "groupIds": [
-        "casqwUZxtmDDp4fWziYzm",
-        "q6Pn7scv3jyWbcKJj0VPG"
-      ],
+      "groupIds": [],
       "frameId": null,
       "roundness": {
         "type": 2
@@ -86,10 +79,7 @@
       "width": 38.295773237179446,
       "height": 40.48662140675077,
       "seed": 1401607842,
-      "groupIds": [
-        "casqwUZxtmDDp4fWziYzm",
-        "q6Pn7scv3jyWbcKJj0VPG"
-      ],
+      "groupIds": [],
       "frameId": null,
       "roundness": {
         "type": 2
@@ -153,10 +143,7 @@
       "width": 4.69818115234375,
       "height": 4.69818115234375,
       "seed": 1794880098,
-      "groupIds": [
-        "casqwUZxtmDDp4fWziYzm",
-        "q6Pn7scv3jyWbcKJj0VPG"
-      ],
+      "groupIds": [],
       "frameId": null,
       "roundness": {
         "type": 2
@@ -185,10 +172,7 @@
       "width": 23.24691772460949,
       "height": 11.53113708496096,
       "seed": 1599804962,
-      "groupIds": [
-        "casqwUZxtmDDp4fWziYzm",
-        "q6Pn7scv3jyWbcKJj0VPG"
-      ],
+      "groupIds": [],
       "frameId": null,
       "roundness": {
         "type": 2
@@ -231,8 +215,8 @@
     },
     {
       "type": "text",
-      "version": 1377,
-      "versionNonce": 369444417,
+      "version": 1378,
+      "versionNonce": 2143603693,
       "isDeleted": false,
       "id": "aQVrur4z0M2UDgK0-9k2i",
       "fillStyle": "hachure",
@@ -248,13 +232,11 @@
       "width": 103.69992065429688,
       "height": 24,
       "seed": 563610082,
-      "groupIds": [
-        "q6Pn7scv3jyWbcKJj0VPG"
-      ],
+      "groupIds": [],
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1719152491774,
+      "updated": 1719157328002,
       "link": null,
       "locked": false,
       "fontSize": 20,

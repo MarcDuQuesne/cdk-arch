@@ -32,7 +32,8 @@
       "boundElements": [],
       "updated": 1719153759376,
       "link": null,
-      "locked": false
+      "locked": false,
+      "boundingBox": true
     },
     {
       "type": "line",

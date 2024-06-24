@@ -1,10 +1,10 @@
-import * as fs from 'fs';
-import * as path from 'path';
 import * as cdk from 'aws-cdk-lib';
 import { Aspects } from 'aws-cdk-lib';
+import * as fs from 'fs';
+import * as path from 'path';
 import * as tmp from 'tmp-promise';
 import { ExampleStack } from '../examples/example-stack';
-import { Sketch } from '../src/cdk-arch/cdk';
+import { SketchBuilder } from '../src/cdk-arch';
 
 tmp.setGracefulCleanup();
 
@@ -24,10 +24,10 @@ test('CDK Architecture from Stack', async () => {
     },
   });
 
-  Aspects.of(app).add(new Sketch());
+  Aspects.of(app).add(new SketchBuilder());
 
   app.synth();
-  Sketch.exportToFile(filepath);
+  SketchBuilder.exportToFile(filepath);
 
   expect(fs.existsSync(filepath)).toBe(true);
 });

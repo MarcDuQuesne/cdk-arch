@@ -26,9 +26,9 @@ export class ExampleStack extends cdk.Stack {
       },
     });
 
-    bucket.node.addMetadata('CDKArch Element', { x: 1, y: 2 });
-    lfunction.node.addMetadata('CDKArch Element', { x: 100, y: 200 });
-    // this.node.addMetadata('CDKArch Connection', { startId: bucket.node.id, endId: lfunction.node.id });
+    bucket.node.addMetadata('CDKArch Element', { x: 100, y: 0 });
+    lfunction.node.addMetadata('CDKArch Element', { x: 200, y: 0 });
+    bucket.node.addMetadata('CDKArch Connection', { startId: bucket.node.id, endId: lfunction.node.id });
 
   }
 }
