@@ -11,6 +11,7 @@ function capitalize(word: string): string {
 export class Icon {
 
     static readonly iconPath: string = path.join(__dirname);
+    static scalingFactor: number = 1.0;
 
     // Supported icons
     static readonly icons: { [key: string]: string } = {
@@ -53,8 +54,8 @@ export class Icon {
         this.translate(-this.box.x, -this.box.y);
 
         // scale the icon to 100px width
-        const scalefactor = 100.0 / this.box.width;
-        this.scale(scalefactor);
+        // const scalefactor = 100.0 / this.box.width;
+        // this.scale(scalefactor);
     }
 
     public translate(dx: number, dy: number): void {

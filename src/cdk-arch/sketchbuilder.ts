@@ -1,7 +1,9 @@
+import * as cdk from 'aws-cdk-lib';
 import { IConstruct, MetadataEntry } from 'constructs';
 import * as fs from 'fs';
+import * as path from 'path';
 import { Icon } from './icons';
-import { Arrow, Point, Rectangle, vectorLength } from './primitives';
+import { Arrow, Point, Rectangle, RectangleProps, Text, vectorLength } from './primitives';
 
 export interface AppState {
   readonly viewBackgroundColor: string;
@@ -21,14 +23,16 @@ export interface AppState {
 export class SketchBuilder {
 
   data: any;
-  icons: { [key: string]: Icon } = {};
+  constructsIcon: { [key: string]: Icon } = {};
   arrows: Arrow[] = [];
   boundingElements: Rectangle[] = [];
+  texts: Text[] = [];
 
   arrowIconGap: number = 0.75; // 0.5 is the minimum to make the arrow not touch the icon
 
   private delayedArrows: any[] = [];
   private delayedBoundingElements: any[] = [];
+  private delayedStacks: { [key: string]: { elements: string[], region: string, account: string } } = {};
 
   constructor() {
     this.data = {
@@ -41,33 +45,48 @@ export class SketchBuilder {
         gridSize: null,
       },
     };
-    this.icons = {};
+    this.constructsIcon = {};
   }
 
   public visit(node: IConstruct): void {
 
     const metadataList = node.node.metadata;
 
-    // if the medatadat contains 'CDKArch':
+    if (node instanceof cdk.Stack) {
+
+      const icon = new Icon();
+      icon.loadJsonIcon(path.join(Icon.iconPath, 'account.json'), node);
+      icon.text.text = `Account: ${node.account}`
+
+      this.constructsIcon[node.node.id] = icon;
+
+      this.delayedStacks[(node as cdk.Stack).node.id] = {
+        elements: [],
+        region: (node as cdk.Stack).region,
+        account: (node as cdk.Stack).account,
+      };
+    }
 
     for (const metadata of metadataList) {
       if (metadata.type === 'CDKArch Element') {
         this.addIconForConstruct(node, metadata);
+        const stackName = node.node.scope!.node.id;
+        this.delayedStacks[stackName]['elements'].push(node.node.id);
       }
       if (metadata.type === 'CDKArch Connection') {
         this.registerArrow(metadata.data.startId, metadata.data.endId);
       }
-      if (metadata.type === 'CDKArch BoundingElement') {
-        this.registerBoudingElement(metadata.data);
-      }
+      // if (metadata.type === 'CDKArch BoundingElement') {
+      //   this.registerBoudingElement(metadata.data);
+      // }
     }
   }
 
   addIconForConstruct(node: IConstruct, metadata: MetadataEntry): void {
-    this.icons[node.node.id] = Icon.fromConstruct(node);
-    this.icons[node.node.id].translate(metadata.data.x, metadata.data.y);
+    this.constructsIcon[node.node.id] = Icon.fromConstruct(node);
+    this.constructsIcon[node.node.id].translate(metadata.data.x, metadata.data.y);
     if ('text' in metadata.data) {
-      this.icons[node.node.id].text.text = metadata.data.text;
+      this.constructsIcon[node.node.id].text.text = metadata.data.text;
     }
   }
 
@@ -82,16 +101,16 @@ export class SketchBuilder {
 
   addArrow(startNodeId: string, endNodeId: string): string {
 
-    if (!(startNodeId in this.icons)) {
+    if (!(startNodeId in this.constructsIcon)) {
       throw new Error(`Icon with group ID ${startNodeId} not found.`);
     }
-    if (!(endNodeId! in this.icons)) {
+    if (!(endNodeId! in this.constructsIcon)) {
       throw new Error(`Icon with group ID ${endNodeId} not found.`);
     }
 
     // find an icon in this.Icon that contains a groupId called startnodeId, and return the boundaryBox Id.
-    const startIcon = this.icons[startNodeId];
-    const endIcon = this.icons[endNodeId];
+    const startIcon = this.constructsIcon[startNodeId];
+    const endIcon = this.constructsIcon[endNodeId];
 
     // points without gap
     const points: Point[] = [
@@ -125,7 +144,12 @@ export class SketchBuilder {
   }
 
   exportToFile(savePath: string): void {
-    for (const icon of Object.values(this.icons)) {
+
+    for (const [stackId, stackProps] of Object.entries(this.delayedStacks)) {
+      this.addStackBoundingElement(stackId, stackProps);
+    }
+
+    for (const icon of Object.values(this.constructsIcon)) {
       this.data.elements = this.data.elements.concat(icon.elements());
     }
 
@@ -137,13 +161,17 @@ export class SketchBuilder {
       this.data.elements.push(arrow);
     }
 
-    for (const ids of this.delayedBoundingElements) {
-      this.addBoundingElement(ids)
-    }
+    // for (const ids of this.delayedBoundingElements) {
+    //   this.addBoundingElement(ids)
+    // }
 
-    for (const boundingElement of this.boundingElements) {
-      this.data.elements.push(boundingElement);
-    }
+    // for (const boundingElement of this.boundingElements) {
+    //   this.data.elements.push(boundingElement);
+    // }
+
+    // for (const text of this.texts) {
+    //   this.data.elements.push(text);
+    // }
 
     if (!savePath.endsWith('.excalidraw')) {
       savePath += '.excalidraw';
@@ -152,10 +180,10 @@ export class SketchBuilder {
     fs.writeFileSync(savePath, JSON.stringify(this.data, null, 4));
   }
 
-  addBoundingElement(nodeIds: string[], padding: number = 20): any {
+  boundingElement(nodeIds: string[], padding: number = 20, args?: RectangleProps): Rectangle {
 
-    const boxes = nodeIds.map((nodeId) => this.icons[nodeId].box);
-    const texts = nodeIds.map((nodeId) => this.icons[nodeId].text);
+    const boxes = nodeIds.map((nodeId) => this.constructsIcon[nodeId].box);
+    const texts = nodeIds.map((nodeId) => this.constructsIcon[nodeId].text);
 
     const elements = boxes.concat(texts);
 
@@ -165,17 +193,38 @@ export class SketchBuilder {
     const maxX = Math.max(...elements.map((element) => element.x + element.width));
     const maxY = Math.max(...elements.map((element) => element.y + element.height));
 
-    this.boundingElements.push(new Rectangle({
+    const boundingElement = new Rectangle({
       x: minX - padding,
-      y: minY - padding,
+      y: minY - 4*padding,
       width: maxX - minX + 2 * padding,
-      height: maxY - minY + 2 * padding,
+      height: maxY - minY + 6 * padding,
       strokeColor: "#e03131",
       backgroundColor: "transparent",
-    }));
+      ...args,
+    });
 
+    return boundingElement;
+  }
+
+  addboundingElement(nodeIds: string[], padding: number = 20, args?: RectangleProps): string {
+    const boundingElement = this.boundingElement(nodeIds, padding, args)
+    this.boundingElements.push(boundingElement);
+    return boundingElement.id;
   };
 
+  addStackBoundingElement(stackId: string, stackProps: any, padding: number = 20): any {
+
+    const x = this.constructsIcon[stackId].box.x
+    const y = this.constructsIcon[stackId].box.y;
+    this.constructsIcon[stackId].box = this.boundingElement(stackProps.elements, padding);
+
+    this.constructsIcon[stackId].box.width = Math.max(this.constructsIcon[stackId].box.width, this.constructsIcon[stackId].text.width + 2 * padding);
+
+    for (const element of this.constructsIcon[stackId].iconElements) {
+      element.translate(this.constructsIcon[stackId].box.x - x, this.constructsIcon[stackId].box.y -y);
+    }
+    this.constructsIcon[stackId].text.translate(this.constructsIcon[stackId].box.x - x, this.constructsIcon[stackId].box.y - y);
+  }
 
   //     if (returnGroup) {
   //         const elements = element instanceof primitives.Group ? element.elements : [element];

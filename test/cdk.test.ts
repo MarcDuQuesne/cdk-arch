@@ -19,7 +19,7 @@ test('CDK Architecture from Stack', async () => {
   const app = new cdk.App();
   new ExampleStack(app, 'ExampleStack', {
     env: {
-      account: process.env.CDK_DEFAULT_ACCOUNT,
+      account: '123456789012',
       region: 'eu-west-1',
     },
   });
