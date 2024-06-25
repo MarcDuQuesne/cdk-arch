@@ -26,8 +26,8 @@ export class ExampleStack extends cdk.Stack {
     });
 
     // We add some metadata to the resources to be able to position them in the diagram
-    bucket.node.addMetadata('CDKArch Element', { x: 0, y: 0});
-    lfunction.node.addMetadata('CDKArch Element', { x: 300, y: 0 });
+    bucket.node.addMetadata('CDKArch Element', { x: 200, y: 0 });
+    lfunction.node.addMetadata('CDKArch Element', { x: 600, y: 0 });
     // We add a connection between the bucket and the lambda function
     bucket.node.addMetadata('CDKArch Connection', { startId: bucket.node.id, endId: lfunction.node.id });
 
