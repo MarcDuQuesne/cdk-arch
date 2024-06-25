@@ -1,32 +1,34 @@
 import { IConstruct, MetadataEntry } from 'constructs';
 import * as fs from 'fs';
 import { Icon } from './icons';
-import * as primitives from './primitives';
+import { Arrow, Point, Rectangle, vectorLength } from './primitives';
 
 export interface AppState {
   readonly viewBackgroundColor: string;
   readonly gridSize: any;
 }
 
-function compareNumbers(a: number, b: number): number {
-  if (a - b > 1) {
-    return 1;
-  } else if ((a - b < 1) && (a - b > 0)) {
-    return 0;
-  } else {
-    return -1;
-  }
-}
+// function compareNumbers(a: number, b: number): number {
+//   if (a - b > 1) {
+//     return 1;
+//   } else if ((a - b < 1) && (a - b > 0)) {
+//     return 0;
+//   } else {
+//     return -1;
+//   }
+// }
 
 export class SketchBuilder {
 
   data: any;
   icons: { [key: string]: Icon } = {};
-  arrows: primitives.Arrow[] = [];
+  arrows: Arrow[] = [];
+  boundingElements: Rectangle[] = [];
 
   arrowIconGap: number = 0.75; // 0.5 is the minimum to make the arrow not touch the icon
 
   private delayedArrows: any[] = [];
+  private delayedBoundingElements: any[] = [];
 
   constructor() {
     this.data = {
@@ -55,7 +57,9 @@ export class SketchBuilder {
       if (metadata.type === 'CDKArch Connection') {
         this.registerArrow(metadata.data.startId, metadata.data.endId);
       }
-
+      if (metadata.type === 'CDKArch BoundingElement') {
+        this.registerBoudingElement(metadata.data);
+      }
     }
   }
 
@@ -72,6 +76,10 @@ export class SketchBuilder {
     this.delayedArrows.push([startNodeId, endNodeId]);
   }
 
+  registerBoudingElement(boundingElements: string[]) {
+    this.delayedBoundingElements.push(boundingElements);
+  }
+
   addArrow(startNodeId: string, endNodeId: string): string {
 
     if (!(startNodeId in this.icons)) {
@@ -86,7 +94,7 @@ export class SketchBuilder {
     const endIcon = this.icons[endNodeId];
 
     // points without gap
-    const points = [
+    const points: Point[] = [
       [0, 0],
       [
         endIcon.box.x - startIcon.box.x + (endIcon.box.width - startIcon.box.width) / 2,
@@ -94,18 +102,12 @@ export class SketchBuilder {
       ],
     ];
 
-    // Apply magic gap
-    let sign = compareNumbers(points[0][0], points[1][0]);
-    points[0][0] -= sign * startIcon.box.width * this.arrowIconGap;
-    points[1][0] += sign * endIcon.box.width * this.arrowIconGap;
+    // points with gap
+    const vlength = vectorLength(points[1]);
+    points[0] = [points[1][0] / vlength * startIcon.box.width * this.arrowIconGap, points[1][1] / vlength * startIcon.box.height * this.arrowIconGap];
+    points[1] = [points[1][0] / vlength * (vlength - startIcon.box.width * this.arrowIconGap), points[1][1] / vlength * (vlength - startIcon.box.height * this.arrowIconGap)];
 
-    // Apply magic gap
-    sign = compareNumbers(points[0][1], points[1][1]);
-    points[0][1] -= sign * startIcon.box.width * this.arrowIconGap;
-    points[1][1] += sign * startIcon.box.width * this.arrowIconGap;
-
-
-    const arrow = new primitives.Arrow({
+    const arrow = new Arrow({
       startBinding: { elementId: startIcon.box.id, focus: 0, gap: startIcon.box.height * (this.arrowIconGap - 0.5) },
       endBinding: { elementId: endIcon.box.id, focus: 0, gap: endIcon.box.height * (this.arrowIconGap - 0.5) },
       points: points,
@@ -135,6 +137,13 @@ export class SketchBuilder {
       this.data.elements.push(arrow);
     }
 
+    for (const ids of this.delayedBoundingElements) {
+      this.addBoundingElement(ids)
+    }
+
+    for (const boundingElement of this.boundingElements) {
+      this.data.elements.push(boundingElement);
+    }
 
     if (!savePath.endsWith('.excalidraw')) {
       savePath += '.excalidraw';
@@ -143,22 +152,29 @@ export class SketchBuilder {
     fs.writeFileSync(savePath, JSON.stringify(this.data, null, 4));
   }
 
-  // createBoundingElement(element: any, elementType = 'Rectangle', backgroundColor = '#e64980', padding = 10, returnGroup = true, disolvePriorGroup = true): any {
-  //     const group: primitives.Group = new primitives.Group();
-  //     const elementBBox = element.bbox;
-  //     const newX = elementBBox[0] - padding;
-  //     const newY = elementBBox[1] - padding;
-  //     const newWidth = elementBBox[2] - elementBBox[0] + 2 * padding;
-  //     const newHeight = elementBBox[3] - elementBBox[1] + 2 * padding;
-  //     const ElementClass = (primitives as any)[elementType];
-  //     const boundingElement = new ElementClass({
-  //         setToSolid: true,
-  //         x: newX,
-  //         y: newY,
-  //         width: newWidth,
-  //         height: newHeight,
-  //         backgroundColor,
-  //     });
+  addBoundingElement(nodeIds: string[], padding: number = 20): any {
+
+    const boxes = nodeIds.map((nodeId) => this.icons[nodeId].box);
+    const texts = nodeIds.map((nodeId) => this.icons[nodeId].text);
+
+    const elements = boxes.concat(texts);
+
+    const minX = Math.min(...elements.map((element) => element.x));
+    const minY = Math.min(...elements.map((element) => element.y));
+
+    const maxX = Math.max(...elements.map((element) => element.x + element.width));
+    const maxY = Math.max(...elements.map((element) => element.y + element.height));
+
+    this.boundingElements.push(new Rectangle({
+      x: minX - padding,
+      y: minY - padding,
+      width: maxX - minX + 2 * padding,
+      height: maxY - minY + 2 * padding,
+      strokeColor: "#e03131",
+      backgroundColor: "transparent",
+    }));
+
+  };
 
 
   //     if (returnGroup) {

@@ -1,7 +1,7 @@
-import * as fs from 'fs';
-import * as path from 'path';
 import * as cdk from 'aws-cdk-lib';
 import { Aspects } from 'aws-cdk-lib';
+import * as fs from 'fs';
+import * as path from 'path';
 import * as tmp from 'tmp-promise';
 import { ExampleStack } from '../examples/example-stack';
 import { SketchBuilder } from '../src/cdk-arch';
@@ -10,10 +10,11 @@ tmp.setGracefulCleanup();
 
 test('CDK Architecture from Stack', async () => {
 
-  const tmpDirectory = await tmp.dir({
-    unsafeCleanup: true,
-  });
-  const filepath = path.join(tmpDirectory.path, 'test.excalidraw');
+  // const tmpDirectory = await tmp.dir({
+  //   unsafeCleanup: true,
+  // });
+  // const filepath = path.join(tmpDirectory.path, 'exampleStack.excalidraw');
+  const filepath = path.join('exampleStack.excalidraw');
 
   const app = new cdk.App();
   new ExampleStack(app, 'ExampleStack', {

@@ -4,6 +4,12 @@
 
 import { uuid } from 'uuidv4';
 
+export type Point = [number, number];
+
+export function vectorLength(p: Point): number {
+  return Math.sqrt(p[0] ** 2 + p[1] ** 2);
+}
+
 enum PrimitiveType {
   LINE = 'line',
   RECTANGLE = 'rectangle',
@@ -184,19 +190,25 @@ export abstract class LineLike extends DrawnObject {
 
 export interface LineProps extends LineLikeProps {
 
-  readonly points?: number[][];
+  readonly points?: Point[];
 
 }
 
 export class Line extends LineLike {
 
-  points: number[][] = [];
+  points: Point[] = [];
+
 
   constructor(args: LineProps) {
-
     super(args);
     this.points = args.points || this.points;
   }
+
+  public scale(factor: number) {
+    super.scale(factor);
+    this.points = this.points.map(([x, y]) => [x * factor, y * factor]);
+  }
+
 }
 
 
@@ -290,6 +302,13 @@ export class Text extends DrawnObject {
     this.text = args.text;
     this.lineHeight = args.lineHeight || 1.2;
     this.baseline = args.baseline || 17;
+  }
+
+  public scale(factor: number): void {
+    super.scale(factor);
+    this.fontSize *= factor;
+    this.lineHeight *= factor;
+    this.baseline *= factor;
   }
 }
 

@@ -8,7 +8,6 @@ function capitalize(word: string): string {
     return word.charAt(0).toUpperCase() + word.slice(1);
 };
 
-
 export class Icon {
 
     static readonly iconPath: string = path.join(__dirname);
@@ -50,25 +49,35 @@ export class Icon {
             }
         };
 
+        // center this icon in the page
         this.translate(-this.box.x, -this.box.y);
-        this.scale(100.0 / this.box.width);
 
+        // scale the icon to 100px width
+        const scalefactor = 100.0 / this.box.width;
+        this.scale(scalefactor);
     }
 
-    public translate(x: number, y: number): void {
+    public translate(dx: number, dy: number): void {
         for (const element of this.iconElements) {
-            element.translate(x, y);
+            element.translate(dx, dy);
         }
-        this.box.translate(x, y);
-        this.text.translate(x, y);
+        this.box.translate(dx, dy);
+        this.text.translate(dx, dy);
     }
 
     public scale(ratio: number): void {
+
         for (const element of this.iconElements) {
             element.scale(ratio);
+            element.x = element.x * ratio;
+            element.y = element.y * ratio;
         }
         this.box.scale(ratio);
+        this.box.x = this.box.x * ratio;
+        this.box.y = this.box.y * ratio;
         this.text.scale(ratio);
+        this.text.x = this.text.x * ratio;
+        this.text.y = this.text.y * ratio;
     }
 
 
