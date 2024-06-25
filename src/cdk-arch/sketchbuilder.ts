@@ -1,5 +1,5 @@
-import * as fs from 'fs';
 import { IConstruct, MetadataEntry } from 'constructs';
+import * as fs from 'fs';
 import { Icon } from './icons';
 import * as primitives from './primitives';
 
@@ -61,7 +61,7 @@ export class SketchBuilder {
 
   addIconForConstruct(node: IConstruct, metadata: MetadataEntry): void {
     this.icons[node.node.id] = Icon.fromConstruct(node);
-    this.icons[node.node.id].moveIcon(metadata.data.x, metadata.data.y);
+    this.icons[node.node.id].translate(metadata.data.x, metadata.data.y);
     if ('text' in metadata.data) {
       this.icons[node.node.id].text.text = metadata.data.text;
     }

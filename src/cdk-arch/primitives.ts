@@ -65,6 +65,16 @@ export abstract class ExcaliDrawPrimitive {
       },
     );
   }
+
+  public translate(x: number, y: number): void {
+    this.x += x;
+    this.y += y;
+  }
+
+  public scale(factor: number): void {
+    this.width *= factor;
+    this.height *= factor;
+  }
 }
 
 export interface Roundness {
